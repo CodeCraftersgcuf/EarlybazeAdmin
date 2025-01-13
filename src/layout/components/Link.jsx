@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const LinkComp = ({ name, link, sub = [], isActiveCheck,icon, onClick }) => {
+const LinkComp = ({ name, link, sub = [], isActiveCheck,icon, onClick ,menuStatus }) => {
     const location = useLocation(); // Get the current location (URL path)
     const [isActive, setIsActive] = React.useState(isActiveCheck);
 
@@ -22,24 +22,26 @@ const LinkComp = ({ name, link, sub = [], isActiveCheck,icon, onClick }) => {
                     <Link
                         to={link}
                         onClick={onClick}
-                        className={`flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer  ${isActive ? 'bg-gradient-to-r from-[#093826] to-[#257355]' : 'hover:bg-gradient-to-r hover:from-[#093826] hover:to-[#257355]'}`}
+                        className={`${menuStatus ? 'w-fit' : ''} flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer  ${isActive ? 'bg-gradient-to-r from-[#093826] to-[#257355]' : 'hover:bg-gradient-to-r hover:from-[#093826] hover:to-[#257355]'}`}
                     >
                         <div className='flex items-center gap-3'>
                             <i className={`${icon} 2xl`}></i>
-                            <span className="capitalize font-semibold">{name}</span>
+                            {!menuStatus && <span className="capitalize font-semibold">{name}</span>}
                         </div>
-                        {sub.length > 0 && (
-                            <i class="bi bi-plus-square 2xl"></i>
+                        {!menuStatus && sub.length > 0 && (
+                            <i className="bi bi-plus-square 2xl"></i>
                         )}
                     </Link>
                 </div>
                 {isActive && sub.length > 0 && (
-                    <div className='sublinks flex flex-col pl-14 gap-2 mt-4 animate-slide-down'>
+                    <div className={`sublinks relative flex flex-col ${!menuStatus ? 'ml-14' : ''} gap-2 mt-4 animate-slide-down`}>
+                        {!menuStatus && <div className='absolute left-0 top-0 h-[78%] w-[2px] bg-[#257355]'></div>}
                         {sub.map((item, index) => (
                             <Link to={item.link} key={index}>
-                                <div className={`flex items-center gap-2 text-lg ${location.pathname === item.link ? 'text-[#44efad]' : ''}`}>
-                                    <i className={`${item.icon} 2xl`}></i>
-                                    <span className="capitalize font-semibold">{item.name}</span>
+                                <div className={`flex items-center gap-2 ${!menuStatus ? "pl-[20px]" : 'pl-[28px]'} text-lg ${location.pathname === item.link ? 'text-[#44efad]' : ''} relative`}>
+                                    {!menuStatus && <div className='absolute left-0 top-1/2 h-[2px] w-[20px] bg-[#257355]'></div>}
+                                    <i className={`${item.icon} 2xl pl-1`}></i>
+                                    {!menuStatus && <span className="capitalize font-semibold">{item.name}</span>}
                                 </div>
                             </Link>
                         ))}

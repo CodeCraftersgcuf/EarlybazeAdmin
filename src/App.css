@@ -19,6 +19,15 @@
     background-color:#01160E;
 }
 .bg-theme-light {
-    background-color: #093826;
+    background-color: #00291a;
     /* background-color: #257355; */
+}
+.text-theme-dark {
+    color:#01160E;
+}
+.text-theme-light {
+    color: #00291a;
+}
+.text-theme-bright-light {
+    color: #00bd78;
 }

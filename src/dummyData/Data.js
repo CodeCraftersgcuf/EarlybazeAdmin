@@ -115,30 +115,135 @@ export const Sidebar_links = [
 
 
 // exporting topbar imgs
-export const Topbar_profile_Left =[
+export const Topbar_profile_Left = [
     {
-      "profileImage": "https://randomuser.me/api/portraits/men/44.jpg"
+        "profileImage": "https://randomuser.me/api/portraits/men/44.jpg"
     },
     {
-      "profileImage": "https://randomuser.me/api/portraits/men/45.jpg"
+        "profileImage": "https://randomuser.me/api/portraits/men/45.jpg"
     },
     {
-      "profileImage": "https://randomuser.me/api/portraits/men/46.jpg"
+        "profileImage": "https://randomuser.me/api/portraits/women/46.jpg"
     },
     {
-      "profileImage": "https://randomuser.me/api/portraits/men/47.jpg"
+        "profileImage": "https://randomuser.me/api/portraits/men/47.jpg"
     },
     {
-      "profileImage": "https://randomuser.me/api/portraits/men/48.jpg"
-    },
-    {
-      "profileImage": "https://randomuser.me/api/portraits/men/49.jpg"
-    },
-    {
-      "profileImage": "https://randomuser.me/api/portraits/men/50.jpg"
-    },
-    {
-      "profileImage": "https://randomuser.me/api/portraits/men/51.jpg"
+        "profileImage": "https://randomuser.me/api/portraits/men/48.jpg"
     }
-  ]
-  
+]
+
+
+
+
+//  ______________________________Dashboard Dummy______________________
+export const dashboard_legends = [
+    { color: "#126EB9", label: "Users" },
+    { color: "#78CA19", label: "Transactions" },
+    { color: "#B95A12", label: "Revenue" },
+    { color: "#CA1919", label: "Wallet" },
+];
+export const Dashboard_categoryOptions = [
+    { value: "users", name: "Users" },
+    { value: "transactions", name: "Transactions" },
+    { value: "revenue", name: "Revenue" },
+    { value: "wallet", name: "Wallet" },
+];
+
+export const Dashboard_periodOptions = [
+    { value: "monthly", name: "Monthly" },
+    { value: "yearly", name: "Yearly" },
+    { value: "weekly", name: "Weekly" },
+];
+
+export const Dashboard_cryptoWallet = [
+    {
+        "crypto_name": 'BTC',
+        "value": '3.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '4.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '4.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '5.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '5.25'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '0.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '1.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '7.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '7.01'
+    },
+    {
+        "crypto_name": 'BTC',
+        "value": '9.01'
+    },
+]
+
+
+
+
+//  ______________________________User Management Dummy______________________
+export const users_table = [
+    {
+        "id": 1,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "online"
+    },
+    {
+        "id": 2,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "offline"
+    },
+    {
+        "id": 3,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "online"
+    },
+    {
+        "id": 4,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "offline"
+    },
+    {
+        "id": 5,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "online"
+    },
+    {
+        "id": 6,
+        "name": "Alucard",
+        "email": "qamardeenoladimeji@gmail.com",
+        "phone": "07033484845",
+        "status": "offline"
+    }
+]   
