@@ -9,6 +9,8 @@ import './App.css'
 import Layout from './layout/Layout';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Dashboard from './pages/dashboard/Dashboard';
+import Login from './auth/login';
+import UserManagement from './pages/userManagement/UserManagement';
 
 
 function App() {
@@ -18,9 +20,10 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/Login" element={<Login/>} />
           <Route path="/" element={<Layout />}>
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="user/management" element={<Dashboard />} />
+            <Route path="user/management" element={<UserManagement />} />
             <Route path="wallet/management" element={<Dashboard />} />
             <Route path="wallet/virtual" element={<Dashboard />} />
             <Route path="wallet/master" element={<Dashboard />} />
