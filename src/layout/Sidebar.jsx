@@ -4,7 +4,6 @@ import LinkComp from "./components/Link";
 import logo from "../assets/images/logo.png";
 import { Sidebar_links } from "../dummyData/Data";
 
-
 const Sidebar = ({ setMobileOpen }) => {
   const location = useLocation();
   const [activeLink, setActiveLink] = React.useState("/dashboard");
@@ -72,7 +71,7 @@ const Sidebar = ({ setMobileOpen }) => {
         </nav>
       </div>
       <div className="p-4 border-t-2 border-[#093826] mt-4 flex items-center justify-center">
-        <button className="bg-white flex items-center justify-center p-2 gap-2 text-black font-bold rounded-lg w-full">
+        <button className="flex items-center justify-center p-2 gap-2 text-[#FF0000] font-bold rounded-lg w-full border border-[#F70F0F]">
           <i className="bi bi-box-arrow-left text-2xl"></i>
           {!menuOpen && <span>Logout</span>}
         </button>

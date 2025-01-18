@@ -23,7 +23,7 @@ const TableCan = ({
       )}
       <div className="overflow-auto md:overflow-y-visible">
         <table className="min-w-full table-auto border-collapse">
-          <thead className="bg-theme-dark text-white capitalize">
+          <thead className="bg-[#01190F] text-white capitalize">
             <tr>
               {headerTr.map((item, index) => (
                 <th
