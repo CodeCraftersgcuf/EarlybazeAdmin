@@ -51,7 +51,7 @@ const UserTable = () => {
     };
     return (
         <>
-            <div className='mt-[100px] mb-8 flex lg:items-center gap-4 justify-between flex-col-reverse lg:flex-row'>
+            <div className='mt-[50px] mb-6 flex lg:items-center gap-4 justify-between flex-col-reverse lg:flex-row'>
                 <Filter tabs={tabs} handleValue={filterData} />
                 <div className='flex items-center gap-2 justify-end'>
                     <Button

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const LinkComp = ({ name, link, sub = [], isActiveCheck,icon, onClick ,menuStatus }) => {
+    console.log("The Icon is",icon);
     const location = useLocation(); // Get the current location (URL path)
     const [isActive, setIsActive] = React.useState(isActiveCheck);
 
@@ -25,7 +26,8 @@ const LinkComp = ({ name, link, sub = [], isActiveCheck,icon, onClick ,menuStatu
                         className={`${menuStatus ? 'w-fit' : ''} flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer  ${isActive ? 'bg-gradient-to-r from-[#093826] to-[#257355]' : 'hover:bg-gradient-to-r hover:from-[#093826] hover:to-[#257355]'}`}
                     >
                         <div className='flex items-center gap-3'>
-                            <i className={`${icon} 2xl`}></i>
+                        <img src={icon} alt={`${name} icon`} className="2xl" />
+
                             {!menuStatus && <span className="capitalize font-semibold">{name}</span>}
                         </div>
                         {!menuStatus && sub.length > 0 && (

@@ -13,6 +13,7 @@ import Login from './auth/login';
 import UserManagement from './pages/userManagement/UserManagement';
 import Analytics from './pages/analytic/Analytics';
 import NotFound from './pages/notFound';
+import '../src/constants/fonts.css';
 
 
 function App() {

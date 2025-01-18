@@ -16,7 +16,7 @@ const UsersPortions = () => {
         placeholder: 'Select a period'
     }
     const metricsFilter = [
-        { value: '200', name: 'New users' },
+        { value: '2020', name: 'New users' },
         { value: '1000', name: 'Active users' },
         { value: '300', name: 'Bounced' },
     ]

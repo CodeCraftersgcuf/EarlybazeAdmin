@@ -10,7 +10,7 @@ const CryptoTr = ({displayData,index}) => {
                 <img
                     src={displayData.tokenImg}
                     alt={displayData.name}
-                    className="w-6 h-6"
+                    className="w-8 h-8"
                 />
                 <div className='flex flex-col'>
                     <span className='text-sm opacity-50 capitalize'>{displayData.name}</span>

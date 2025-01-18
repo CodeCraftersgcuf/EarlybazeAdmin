@@ -31,8 +31,6 @@ const MoreDropdown = ({
         <div
             className={`relative w-fit ${dropdownClass}`}
             ref={dropdownRef}
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
         >
             {/* Dropdown Trigger Button */}
             <button

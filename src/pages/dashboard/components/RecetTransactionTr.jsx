@@ -12,7 +12,7 @@ const RecetTransactionTr = ({displayData,index}) => {
                         <img
                             src={displayData.typeimg}
                             alt={displayData.type}
-                            className="w-6 h-6"
+                            className="w-8 h-8"
                         />
                         <div className='flex flex-col'>
                             <span className='text-sm opacity-50'>{displayData.type}</span>

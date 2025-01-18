@@ -1,117 +1,135 @@
-export const Sidebar_links = [
+import {
+    DashboardIcon,
+    user_dash,
+    wallet_dash,
+    transaction_dash,
+    fee_dash,
+    notification_dash,
+    kyc_dash,
+    market_dash,
+    security_dash,
+    report_dash,
+    log_dash,
+    support_dash,
+    team_dash,
+    setting_dash,
+  } from "../constants/Images";
+  
+  export const Sidebar_links = [
     {
-        name: 'Dashboard',
-        link: '/dashboard',
-        icon: 'bi bi-columns-gap',
-        sublinks: []
+      name: "Dashboard",
+      link: "/dashboard",
+      icon: DashboardIcon,
+      sublinks: [],
     },
     {
-        name: 'User Management',
-        link: '/user/management',
-        icon: 'bi bi-people',
-        sublinks: []
+      name: "User Management",
+      link: "/user/management",
+      icon: user_dash,
+      sublinks: [],
     },
     {
-        name: 'Wallet Management',
-        link: '/wallet/virtual',
-        icon: 'bi bi-wallet2',
-        sublinks: [
-            {
-                name: 'Virtual Wallet',
-                link: '/wallet/virtual',
-                icon: 'bi bi-credit-card'
-            },
-            {
-                name: 'Master Wallet',
-                link: '/wallet/master',
-                icon: 'bi bi-briefcase'
-            }
-        ]
+      name: "Wallet Management",
+      link: "/wallet/virtual",
+      icon: wallet_dash,
+      sublinks: [
+        {
+          name: "Virtual Wallet",
+          link: "/wallet/virtual",
+          icon: "bi bi-credit-card",
+        },
+        {
+          name: "Master Wallet",
+          link: "/wallet/master",
+          icon: "bi bi-briefcase",
+        },
+      ],
     },
     {
-        name: 'Transactions',
-        link: '/Transactions',
-        icon: 'bi bi-cash',
-        sublinks: []
+      name: "Transactions",
+      link: "/Transactions",
+      icon: transaction_dash,
+      sublinks: [],
     },
     {
-        name: 'Fee Management',
-        link: '/fee/management',
-        icon: 'bi bi-currency-dollar',
-        sublinks: []
+      name: "Fee Management",
+      link: "/fee/management",
+      icon: fee_dash,
+      sublinks: [],
     },
     {
-        name: 'Notifications',
-        link: '/nodification',
-        icon: 'bi bi-bell',
-        sublinks: []
+      name: "Notifications",
+      link: "/nodification",
+      icon: notification_dash,
+      sublinks: [],
     },
     {
-        name: 'KYC & Compliance',
-        link: '/kyc&compliance/kyc',
-        icon: 'bi bi-shield-check',
-        sublinks: [
-            {
-                name: 'KYC',
-                link: '/kyc&compliance/kyc',
-                icon: 'bi bi-person-check'
-            },
-            {
-                name: 'AMC Monitoring',
-                link: '/kyc&compliance/amcMonitoring',
-                icon: 'bi bi-clipboard-data'
-            }
-        ]
+      name: "KYC & Compliance",
+      link: "/kyc&compliance/kyc",
+      icon: kyc_dash,
+      sublinks: [
+        {
+          name: "KYC",
+          link: "/kyc&compliance/kyc",
+          icon: "bi bi-person-check",
+        },
+        {
+          name: "AMC Monitoring",
+          link: "/kyc&compliance/amcMonitoring",
+          icon: "bi bi-clipboard-data",
+        },
+      ],
     },
     {
-        name: 'Market Data',
-        link: '/MarketData',
-        icon: 'bi bi-graph-up',
-        sublinks: []
+      name: "Market Data",
+      link: "/MarketData",
+      icon: market_dash,
+      sublinks: [],
     },
     {
-        name: 'Security',
-        link: '/security',
-        icon: 'bi bi-lock',
-        sublinks: []
+      name: "Security",
+      link: "/security",
+      icon: security_dash,
+      sublinks: [],
     },
     {
-        name: 'Referral Management',
-        link: '/refferal/management',
-        icon: 'bi bi-person-plus',
-        sublinks: []
+      name: "Referral Management",
+      link: "/refferal/management",
+      icon: fee_dash,
+      sublinks: [],
     },
     {
-        name: 'Reports & Analytics',
-        link: '/report&analytics',
-        icon: 'bi bi-bar-chart',
-        sublinks: []
+      name: "Reports & Analytics",
+      link: "/report&analytics",
+      icon: report_dash,
+      sublinks: [],
     },
     {
-        name: 'Logs',
-        link: '/logs',
-        icon: 'bi bi-clipboard',
-        sublinks: []
+      name: "Logs",
+      link: "/logs",
+      icon: log_dash,
+      sublinks: [],
     },
     {
-        name: 'Support',
-        link: '/support',
-        icon: 'bi bi-headset',
-        sublinks: []
+      name: "Support",
+      link: "/support",
+      icon: support_dash,
+      sublinks: [],
     },
     {
-        name: 'Team Chat',
-        link: '/teamChat',
-        icon: 'bi bi-chat-dots',
-        sublinks: []
+      name: "Team Chat",
+      link: "/teamChat",
+      icon: team_dash,
+      sublinks: [],
     },
     {
-        name: 'Settings',
-        link: '/Settings',
-        icon: 'bi bi-gear',
-        sublinks: []
-    }
-];
+      name: "Settings",
+      link: "/Settings",
+      icon: setting_dash,
+      sublinks: [],
+    },
+  ];
+  
 
 
 // exporting topbar imgs

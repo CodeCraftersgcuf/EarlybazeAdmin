@@ -16,6 +16,7 @@ const UserManagement = () => {
       heading: 'total',
       subheading: 'users',
       cardValue: '25,000',
+      valueStatus: false,
     },
     {
       icon: userIcon,
@@ -23,6 +24,7 @@ const UserManagement = () => {
       heading: 'online',
       subheading: 'users',
       cardValue: '12,000',
+      valueStatus: false,
     },
     {
       icon: userIcon,
@@ -30,12 +32,13 @@ const UserManagement = () => {
       heading: 'online',
       subheading: 'users',
       cardValue: '13,000',
+      valueStatus: false,
     },
   ]
   return (
     <>
       <div className='flex items-center justify-between'>
-        <h1 className='text-4xl'>Users</h1>
+        <h1 className='text-4xl chivo-bold  '>Users</h1>
         <div>
           <AddingButton icon={"bi bi-plus-lg"} title={'add new user'} handlefunction={HandleButton} />
         </div>
@@ -52,6 +55,7 @@ const UserManagement = () => {
                 subheading={item.subheading}
                 cardValue={item.cardValue}
                 cardUnit={item.cardUnit}
+                valueStatus={item.valueStatus}
               />
             )
           })

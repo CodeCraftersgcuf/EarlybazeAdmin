@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import Chart, { animator } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 
 const MetricsChart = ({ chartValues, heading }) => {
-  console.log(chartValues)
-  // [{label:'',value:''}] separate both labels and values in an array
-  const data = {
-    labels: chartValues.map((item) => item.name),
+  const [data, setData] = useState({
+    labels: [],
     datasets: [
       {
-        data: chartValues.map((item) => item.value),
-        backgroundColor: ['red', '#2D18CB', '#11ACE0'],
-        hoverBackgroundColor: ['#ff5d5d', '#5d5dff', '#5de4ff'],
+        data: [],
+        backgroundColor: ['#FF0000', '#2D18CB', '#11ACE0'],
+        hoverBackgroundColor: ['#FF5D5D', '#5D5DFF', '#5DE4FF'],
         borderWidth: 0,
       },
     ],
-  };
+  });
 
+  const total = chartValues.reduce((acc, val) => {
+    return parseInt(acc, 10) + parseInt(val.value, 10);
+  }, 0);
+
+  useEffect(() => {
+    // Update chart data whenever chartValues changes
+    const updatedData = {
+      labels: chartValues.map((item) => item.name),
+      datasets: [
+        {
+          data: chartValues.map((item) => item.value),
+          backgroundColor: ['#FF0000', '#2D18CB', '#11ACE0'],
+          hoverBackgroundColor: ['#FF5D5D', '#5D5DFF', '#5DE4FF'],
+          borderWidth: 0,
+        },
+      ],
+    };
+
+    setData(updatedData);
+  }, [chartValues]);
+  console.log("Data", data);
   const options = {
     plugins: {
       legend: {
@@ -35,10 +54,6 @@ const MetricsChart = ({ chartValues, heading }) => {
   };
 
   // Central text plugin
-
-  const total = chartValues.reduce((acc, val) => {
-    return parseInt(acc, 10) + parseInt(val.value, 10);
-  }, 0);
   Chart.register({
     id: 'centerText',
     beforeDraw(chart) {
@@ -69,8 +84,11 @@ const MetricsChart = ({ chartValues, heading }) => {
           <div className='flex flex-col gap-4 mt-4'>
             {data.labels.map((label, index) => (
               <div key={index} className='flex items-center gap-4'>
-                <div className={`bg-[${data.datasets[0].backgroundColor[index]}]  p-3 rounded-lg`}></div>
-                <div className=''>
+                <div
+                  style={{ backgroundColor: data.datasets[0].backgroundColor[index] }}
+                  className='w-6 h-6 rounded-lg'
+                ></div>
+                <div>
                   <h1 className='text-sm opacity-50 capitalize'>{label}</h1>
                   <p className='text-2xl'>{data.datasets[0].data[index]}</p>
                 </div>

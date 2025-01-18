@@ -3,10 +3,10 @@ import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import Dropdown from "../../../globalComponents/Dropdown";
 
-const StatisticsChart = ({chartData}) => {
+const StatisticsChart = ({ chartData }) => {
     const labels = chartData.map((item) => item.month);
-    const dataValue = chartData.map((item)=> item.value);
-    
+    const dataValue = chartData.map((item) => item.value);
+
     const data = {
         labels: labels,
         datasets: [
@@ -19,6 +19,7 @@ const StatisticsChart = ({chartData}) => {
             },
         ],
     };
+
     const periodFilter = {
         options: [
             { value: 'week', name: 'This week' },
@@ -26,8 +27,8 @@ const StatisticsChart = ({chartData}) => {
             { value: 'day', name: 'Today' },
         ],
         selected: 'This month',
-        placeholder: 'Select a period'
-    }
+        placeholder: 'Select a period',
+    };
 
     const options = {
         responsive: true,
@@ -69,20 +70,19 @@ const StatisticsChart = ({chartData}) => {
             annotation: {
                 display: false, // Disable annotations
             },
+            tooltip: {
+                enabled: true, // Enable tooltips for hover
+            },
         },
     };
+
     const handlePeriod = (value) => {
-        console.log(value)
-    }
+        console.log(value);
+    };
 
     return (
-        <div
-            className="flex flex-col bg-theme-dark text-white p-5 rounded-lg"
-        >
-            <div
-                // change the style in class
-                className="flex justify-between items-center mb-8"
-            >
+        <div className="flex flex-col bg-theme-dark text-white p-5 rounded-lg">
+            <div className="flex justify-between items-center mb-8">
                 <h2 style={{ fontSize: "18px", fontWeight: "600", margin: 0 }}>
                     Statistics
                 </h2>
@@ -91,13 +91,11 @@ const StatisticsChart = ({chartData}) => {
                     placeholder={periodFilter.placeholder}
                     onChange={handlePeriod}
                     selected={periodFilter.selected}
-
-                    // styling
                     borderColor={"[white]"}
-                    bgColor='theme-dark'
-                    roundedValue='full'
-                    postion='left-0'
-                    paddingY='2'
+                    bgColor="theme-dark"
+                    roundedValue="full"
+                    postion="left-0"
+                    paddingY="2"
                 />
             </div>
             <div style={{ height: "300px", zIndex: 1 }}>
