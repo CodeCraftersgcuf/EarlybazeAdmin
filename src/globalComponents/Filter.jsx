@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
-const Filter = ({tabs,handleValue}) => {
-  const [activeTab, setActiveTab] = useState('all'); // Track the active tab
+const Filter = ({tabs,handleValue,tabPadding='4'}) => {
+  const [activeTab, setActiveTab] = useState(tabs[0].name); // Track the active tab
 
   return (
     <div className="flex items-center bg-theme-dark w-fit rounded-lg">
-      {tabs.map((tab) => (
+      {tabs.map((tab,index) => (
         <button
 
-          key={tab}
-          className={`capitalize p-4 px-8 rounded-lg ${
-            activeTab === tab
+          key={index}
+          className={`capitalize py-${tabPadding} px-8 rounded-lg ${
+            activeTab === tab.name
               ? 'bg-[#00bd78] text-white'
               : 'bg-transparent text-gray-400 hover:text-white transition '
           }`}
-          onClick={() => {handleValue(tab); setActiveTab(tab)}}
+          onClick={() => {handleValue(tab.value); setActiveTab(tab.name)}}
         >
-          {tab}
+          {tab.value}
         </button>
       ))}
     </div>

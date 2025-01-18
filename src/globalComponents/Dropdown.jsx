@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 
-const Dropdown = ({ options, selected, onChange, placeholder }) => {
+const Dropdown = ({
+    options,
+    selected,
+    onChange,
+    placeholder,
+    // styling
+    roundedValue = 'lg',
+    position = 'right-0',
+    bgColor = 'transparent',
+    borderColor = 'white',
+    disabled = false,
+    paddingY= '2',
+    gap='2'
+}) =>{
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const handleOptionClick = (option) => {
@@ -10,24 +23,18 @@ const Dropdown = ({ options, selected, onChange, placeholder }) => {
 
     return (
         <div
-            className="relative dropdown"
+            className="relative dropdown w-fit"
             onMouseEnter={() => setDropdownOpen(true)} // Open on hover
             onMouseLeave={() => setDropdownOpen(false)} // Close on hover out
         >
             <button
-                className="flex items-center px-4 py-2 border rounded-lg"
+                className={`flex items-center gap-${gap} capitalize px-4 py-${paddingY} border border-${borderColor} rounded-${roundedValue} bg-${bgColor} w-fit `}
             >
                 {selected || placeholder}
-                <svg
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                >
-                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                </svg>
+                <i className="bi bi-caret-down-fill"></i>
             </button>
             {dropdownOpen && (
-                <div className="absolute z-10 min-w-32 right-0 bg-theme-light border rounded-lg shadow text-white overflow-hidden">
+                <div className={`absolute z-10 min-w-32 ${position} border border-${borderColor} rounded-lg bg-${bgColor} shadow text-white overflow-hidden`}>
                     {options.map((option) => (
                         <button
                             key={option.value}

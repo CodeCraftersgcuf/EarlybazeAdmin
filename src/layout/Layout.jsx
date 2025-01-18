@@ -31,10 +31,9 @@ const Layout = () => {
                                     className="block lg:hidden"
                                     onClick={() => setMobileOpen(!mobileOpen)}
                                 >
-                                    <i className="fa-solid fa-bars text-2xl"></i>
-                                    click
+                                    <i className="bi bi-list text-white text-4xl"></i>
                                 </button>
-                               <Agents agents={Topbar_profile_Left}/>
+                                <Agents agents={Topbar_profile_Left} />
                             </div>
                             <div className="">
                                 {/* give name and img 

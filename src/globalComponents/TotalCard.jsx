@@ -24,7 +24,7 @@ const TotalCard = ({ icon, iconBg, heading, subheading, cardValue, cardUnit, val
                             <h1 className='font-bold'>{cardUnit}</h1>
                             {
                             valueStatus != null && <div className='border border-[#257355] w-6 h-6 p-4 rounded-lg flex items-center justify-center'>
-                                {valueStatus ? <i class="bi bi-arrow-up text-green-500"></i> : <i class="bi bi-arrow-down text-red-500"></i>}
+                                {valueStatus ? <i className="bi bi-arrow-up text-green-500"></i> : <i className="bi bi-arrow-down text-red-500"></i>}
                             </div>
                             }
                         </div>

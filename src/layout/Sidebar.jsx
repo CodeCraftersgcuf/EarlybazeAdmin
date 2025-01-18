@@ -39,8 +39,8 @@ const Sidebar = ({ setMobileOpen }) => {
                     {!menuOpen ? <i className="bi bi-arrow-left-short text-2xl"></i> : <i className="bi bi-arrow-right-short text-2xl"></i> }
                     
                 </div>
-                {/* <i class="bi bi-arrow-left-short"></i>
-                <i class="bi bi-arrow-right-short"></i> */}
+                {/* <i className="bi bi-arrow-left-short"></i>
+                <i className="bi bi-arrow-right-short"></i> */}
             </div>
             {/* Menu */}
             <div className="pt-4 ">
