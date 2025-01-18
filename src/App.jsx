@@ -11,6 +11,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Dashboard from './pages/dashboard/Dashboard';
 import Login from './auth/login';
 import UserManagement from './pages/userManagement/UserManagement';
+import Analytics from './pages/analytic/Analytics';
+import NotFound from './pages/notFound';
 
 
 function App() {
@@ -20,27 +22,25 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/Login" element={<Login/>} />
+          <Route path="/" element={<Login/>} />
           <Route path="/" element={<Layout />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="user/management" element={<UserManagement />} />
-            <Route path="wallet/management" element={<Dashboard />} />
-            <Route path="wallet/virtual" element={<Dashboard />} />
-            <Route path="wallet/master" element={<Dashboard />} />
-            <Route path="Transactions" element={<Dashboard />} />
-            <Route path="fee/management" element={<Dashboard />} />
-            <Route path="nodification" element={<Dashboard />} />
-            <Route path="kyc&compliance" element={<Dashboard />} />
-            <Route path="kyc&compliance/kyc" element={<Dashboard />} />
-            <Route path="kyc&compliance/amcMonitoring" element={<Dashboard />} />
-            <Route path="MarketData" element={<Dashboard />} />
-            <Route path="security" element={<Dashboard />} />
-            <Route path="refferal/management" element={<Dashboard />} />
-            <Route path="report&analytics" element={<Dashboard />} />
-            <Route path="logs" element={<Dashboard />} />
-            <Route path="support" element={<Dashboard />} />
-            <Route path="teamChat" element={<Dashboard />} />
-            <Route path="Settings" element={<Dashboard />} />
+            <Route path="wallet/virtual" element={<NotFound />} />
+            <Route path="wallet/master" element={<NotFound />} />
+            <Route path="Transactions" element={<NotFound />} />
+            <Route path="fee/management" element={<NotFound />} />
+            <Route path="nodification" element={<NotFound />} />
+            <Route path="kyc&compliance/kyc" element={<NotFound />} />
+            <Route path="kyc&compliance/amcMonitoring" element={<NotFound />} />
+            <Route path="MarketData" element={<NotFound />} />
+            <Route path="security" element={<NotFound />} />
+            <Route path="refferal/management" element={<NotFound />} />
+            <Route path="report&analytics" element={<Analytics />} />
+            <Route path="logs" element={<NotFound />} />
+            <Route path="support" element={<NotFound />} />
+            <Route path="teamChat" element={<NotFound />} />
+            <Route path="Settings" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>

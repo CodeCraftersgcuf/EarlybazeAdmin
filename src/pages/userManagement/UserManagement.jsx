@@ -45,6 +45,7 @@ const UserManagement = () => {
           user_cardValues.map((item, index) => {
             return (
               <TotalCard
+              key={index}
                 icon={item.icon}
                 iconBg={item.iconBg}
                 heading={item.heading}

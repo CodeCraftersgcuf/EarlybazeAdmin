@@ -206,44 +206,44 @@ export const Dashboard_cryptoWallet = [
 export const users_table = [
     {
         "id": 1,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
         "phone": "07033484845",
         "status": "online"
     },
     {
         "id": 2,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
         "phone": "07033484845",
         "status": "offline"
     },
     {
         "id": 3,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
         "phone": "07033484845",
         "status": "online"
     },
     {
         "id": 4,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "Bob Brown",
+        "email": "bob.brown@example.com",
         "phone": "07033484845",
         "status": "offline"
     },
     {
         "id": 5,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "Charlie Davis",
+        "email": "charlie.davis@example.com",
         "phone": "07033484845",
         "status": "online"
     },
     {
         "id": 6,
-        "name": "Alucard",
-        "email": "qamardeenoladimeji@gmail.com",
+        "name": "Emily Wilson",
+        "email": "emily.wilson@example.com",
         "phone": "07033484845",
         "status": "offline"
     }
-]   
+];

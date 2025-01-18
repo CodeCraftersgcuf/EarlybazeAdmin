@@ -8,9 +8,9 @@ const TableCan = ({ heading, ButtonName, ButtonLink, headerTr, dataTr, TrName  ,
                 <h1 className="text-2xl font-bold capitalize">{heading}</h1>
                 <Viewall_button navigationLink={ButtonLink} navigationName={ButtonName} />
             </div>}
-            <div className="overflow-x-auto">
+            <div className="overflow-auto md:overflow-y-visible">
                 <table className="min-w-full table-auto border-collapse">
-                    <thead className="bg-theme-dark text-white">
+                    <thead className="bg-theme-dark text-white capitalize">
                         <tr>
                             {headerTr.map((item, index) => (
                                 <th key={index} className={`p-4 text-left capitalize"`}>
@@ -21,7 +21,6 @@ const TableCan = ({ heading, ButtonName, ButtonLink, headerTr, dataTr, TrName  ,
                     </thead>
                     <tbody>
                         {dataTr.map((transaction, index) => (
-                            // Render the TrName component, passing transaction data and index
                             <TrName displayData={transaction} index={index} key={index} />
                         ))}
                     </tbody>
