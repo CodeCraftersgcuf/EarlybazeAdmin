@@ -16,7 +16,7 @@ const Filter = ({tabs,handleValue,tabPadding='4'}) => {
           }`}
           onClick={() => {handleValue(tab.value); setActiveTab(tab.name)}}
         >
-          {tab.value}
+          {tab.name}
         </button>
       ))}
     </div>
