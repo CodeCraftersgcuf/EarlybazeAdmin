@@ -21,7 +21,7 @@ const TableCan = ({
           />
         </div>
       )}
-      <div className="overflow-auto md:overflow-y-visible">
+      <div className="overflow-y-auto">
         <table className="min-w-full table-auto border-collapse">
           <thead className="bg-[#01190F] text-white capitalize">
             <tr>
@@ -38,9 +38,14 @@ const TableCan = ({
             </tr>
           </thead>
           <tbody>
-            {dataTr.map((transaction, index) => (
+            {dataTr.length > 0 ? dataTr.map((transaction, index) => (
               <TrName displayData={transaction} index={index} key={index} />
-            ))}
+            )) :  (
+              <tr className="bg-green-950">
+                <td colSpan={`${headerTr.length}`} className="text-center py-2 px-4">No Data Found</td>
+              </tr>
+            )
+            }
           </tbody>
         </table>
       </div>

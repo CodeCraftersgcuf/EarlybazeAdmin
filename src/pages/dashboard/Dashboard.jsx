@@ -163,6 +163,7 @@ const Dashboard = () => {
                   cardValue={item.cardValue}
                   valueStatus={item.valueStatus}
                   cardUnit={item.cardUnit}
+                  key={index}
                 />
               );
             })}
