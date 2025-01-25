@@ -94,7 +94,7 @@ const StatisticsChart = ({ chartData }) => {
                     borderColor={"[white]"}
                     bgColor="theme-dark"
                     roundedValue="full"
-                    postion="left-0"
+                    position="left-0"
                     paddingY="2"
                 />
             </div>

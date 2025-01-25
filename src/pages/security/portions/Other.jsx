@@ -94,7 +94,7 @@ const Other = () => {
                         borderColor={"[#25AE7A]"}
                         bgColor='theme-dark'
                         roundedValue='full'
-                        postion='left-0'
+                        position='left-0'
                         paddingY='2'
                         gap='4'
                     />
@@ -106,7 +106,7 @@ const Other = () => {
                         borderColor={"[#25AE7A]"}
                         bgColor='theme-dark'
                         roundedValue='full'
-                        postion='left-0'
+                        position='left-0'
                         paddingY='2'
                         gap='4'
                     />

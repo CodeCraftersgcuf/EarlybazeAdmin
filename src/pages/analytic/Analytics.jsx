@@ -5,7 +5,7 @@ import TransactionsPortions from './portions/TransactionsPortions';
 import RevenuePortion from './portions/RevenuePortion';
 
 const Analytics = () => {
-    const [activeTab, setActiveTab] = useState('users');
+    const [activeTab, setActiveTab] = useState('Users');
     const [portion, setPortion] = useState(<UsersPortions />);
 
     const tabs = [

@@ -5,7 +5,7 @@ import Activity from './portions/Activity';
 import Other from './portions/Other';
 
 const Security = () => {
-    const [activeTab, setActiveTab] = useState('users');
+    const [activeTab, setActiveTab] = useState('Apis');
     const [portion, setPortion] = useState(<Apis />);
 
     const tabs = [
