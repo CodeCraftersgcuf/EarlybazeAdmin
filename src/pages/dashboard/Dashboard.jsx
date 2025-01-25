@@ -179,7 +179,7 @@ const Dashboard = () => {
           <TableCan
             showHeading={true}
             // table heading
-            heading={"react transactions"}
+            heading={"recent transactions"}
             // th in first tr
             headerTr={transactions_headerTr}
             // td data display

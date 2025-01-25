@@ -11,7 +11,7 @@ const TableCan = ({
   showHeading = false,
 }) => {
   return (
-    <div className="border border-green-800 rounded-lg overflow-hidden">
+    <div className="border border-green-800 rounded-lg">
       {showHeading && (
         <div className="flex items-center justify-between gap-2 p-4">
           <h1 className="text-2xl font-bold capitalize">{heading}</h1>
@@ -21,7 +21,7 @@ const TableCan = ({
           />
         </div>
       )}
-      <div className="overflow-y-auto">
+      <div className="overflow-x-visible overflow-y-auto">
         <table className="min-w-full table-auto border-collapse">
           <thead className="bg-[#01190F] text-white capitalize">
             <tr>

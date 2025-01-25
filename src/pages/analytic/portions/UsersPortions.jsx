@@ -58,7 +58,7 @@ const UsersPortions = () => {
                 borderColor={"[#25AE7A]"}
                 bgColor='theme-dark'
                 roundedValue='full'
-                postion='left-0'
+                position='left-0'
                 paddingY='4'
                 gap='4'
             />

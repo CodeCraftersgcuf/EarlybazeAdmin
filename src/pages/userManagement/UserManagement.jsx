@@ -48,7 +48,7 @@ const UserManagement = () => {
           user_cardValues.map((item, index) => {
             return (
               <TotalCard
-              key={index}
+                key={index}
                 icon={item.icon}
                 iconBg={item.iconBg}
                 heading={item.heading}
@@ -62,7 +62,7 @@ const UserManagement = () => {
         }
       </div>
       <div>
-        <UserTable/>
+        <UserTable />
       </div>
     </>
   )

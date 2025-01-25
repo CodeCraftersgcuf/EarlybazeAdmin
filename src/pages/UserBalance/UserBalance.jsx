@@ -4,7 +4,7 @@ import Crypto from './portions/Crypto';
 import Naira from './portions/Naira';
 
 const UserBalance = () => {
-    const [activeTab, setActiveTab] = useState('users');
+    const [activeTab, setActiveTab] = useState('Crypto');
     const [portion, setPortion] = useState(<Crypto />);
 
     const tabs = [

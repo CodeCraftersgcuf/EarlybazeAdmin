@@ -124,7 +124,7 @@ import {
     },
     {
       name: "Settings",
-      link: "/Settings",
+      link: "/Settings/admin",
       icon: setting_dash,
       sublinks: [],
     },
