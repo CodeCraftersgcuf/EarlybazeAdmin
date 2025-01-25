@@ -13,8 +13,6 @@
 - **Transaction Monitoring**: View and manage transactions securely.
 - **Reports and Analytics**: Generate reports for better decision-making.
 - **Role-Based Access**: Securely control user permissions.
-
-### Web App
 - **Crypto Portfolio Tracking**: Monitor and analyze your portfolio in real time.
 - **Secure Transactions**: Perform seamless and secure cryptocurrency transactions.
 - **Market Data**: Access live cryptocurrency prices and trends.
@@ -28,20 +26,6 @@
 ### Frontend
 - **React.js**: For building the user interface.
 - **Tailwind CSS**: For responsive and modern styling.
-
-### Backend
-- **Node.js**: Server-side logic and API integration.
-- **Express.js**: Backend framework for creating robust APIs.
-
-### Database
-- **MongoDB**: NoSQL database for efficient data management.
-
-### Authentication
-- **JWT**: Secure user authentication and session management.
-
-### Deployment
-- **Vercel**: Hosting for the web application.
-- **Heroku**: Hosting for the backend services.
 
 ---
 
@@ -86,11 +70,9 @@ Follow these steps to set up the project locally:
 ### Admin Dashboard
 1. Log in with your admin credentials.
 2. Navigate through the dashboard to manage users, monitor transactions, and view reports.
-
-### Web App
-1. Create an account or log in.
-2. Add cryptocurrencies to your portfolio.
-3. View market trends and execute secure transactions.
+3. Create an account or log in.
+4. Add cryptocurrencies to your portfolio.
+5. View market trends and execute secure transactions.
 
 ---
 
