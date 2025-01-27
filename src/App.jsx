@@ -30,6 +30,15 @@ import Notification_User from './pages/notifiaction/Notification_User';
 import InAppNotifications from './pages/notifiaction/InAppNotifications';
 import InAppBanners from './pages/notifiaction/InAppBanners';
 import FeeManagement from './pages/feeManagement/FeeManagement';
+import ExchangeRate from './pages/feeManagement/ExchangeRate';
+import MinimumRate from './pages/feeManagement/MinimumRate';
+import Kyc from './pages/kyc&compliance/Kyc';
+import TradeLimit from './pages/kyc&compliance/TradeLimit';
+import AmlMonitoring from './pages/kyc&compliance/components/AmlMonitoring';
+import AccountDetail from './pages/userManagement_Subpages/account_detail/AccountDetail';
+import BankDetail from './pages/userManagement_Subpages/account_detail/BankDetail';
+import AccountNotification from './pages/userManagement_Subpages/account_detail/AccountNotification';
+import AccountTransactions from './pages/userManagement_Subpages/All_transactions/AccountTransactions';
 
 
 function App() {
@@ -42,12 +51,9 @@ function App() {
           <Route path="/" element={<Login/>} />
           <Route path="/" element={<Layout />}>
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="user/management" element={<UserManagement />} />
             <Route path="wallet/virtual" element={<NotFound />} />
             <Route path="wallet/master" element={<NotFound />} />
             <Route path="Transactions" element={<NotFound />} />
-            <Route path="kyc&compliance/kyc" element={<NotFound />} />
-            <Route path="kyc&compliance/amcMonitoring" element={<NotFound />} />
             <Route path="MarketData" element={<MarketData />} />
             <Route path="security" element={<Security />} />
             <Route path="report&analytics" element={<Analytics />} />
@@ -55,10 +61,22 @@ function App() {
             <Route path="teamChat" element={<NotFound />} />
 
 
+            {/* user management  */}
+            <Route path="user/management" element={<UserManagement />} />
+            <Route path="user/management/customer/:username/detail" element={<AccountDetail />} />
+            <Route path="user/management/customer/:username/bank/detail" element={<BankDetail />} />
+            <Route path="user/management/customer/:username/notifications" element={<AccountNotification />} />
+            <Route path="user/management/customer/:username/transactions" element={<AccountTransactions />} />
+
+            {/* kyc & compliance */}
+            <Route path="kyc&compliance/kyc" element={<Kyc />} />
+            <Route path="kyc&compliance/kyc/Trade/limit" element={<TradeLimit />} />
+            <Route path="kyc&compliance/amcMonitoring" element={<AmlMonitoring />} />
+
             {/*  fee management */}
             <Route path="fee/management" element={<FeeManagement />} />
-            <Route path="fee/management/exchangerate" element={<FeeManagement />} />
-            <Route path="fee/management/minimumtrade" element={<FeeManagement />} />
+            <Route path="fee/exchangerate" element={<ExchangeRate />} />
+            <Route path="fee/minimumtrade" element={<MinimumRate />} />
             
 
             {/* nodification */}

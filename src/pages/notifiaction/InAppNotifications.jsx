@@ -104,11 +104,11 @@ const InAppNotifications = () => {
 
             {showDeleteConfirmation && (
                 <ConfirmationPopup
-                    heading="Are you sure you want to delete this notification?"
-                    confirmColor='bg-red-500'
-                    closeText="Cancel"
-                    onConfirm={confirmDelete}
-                    onClose={() => setShowDeleteConfirmation(false)}
+                heading="Are you sure you want to delete this notification?"
+                confirmColor='bg-red-500'
+                closeText="Cancel"
+                onConfirm={confirmDelete}
+                onClose={() => setShowDeleteConfirmation(false)}
                 />
             )}
         </div>

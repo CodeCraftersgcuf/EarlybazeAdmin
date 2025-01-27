@@ -6,7 +6,6 @@ import Overlay from '../../../../globalComponents/Overlay';
 const SendNotificationModal = ({ closeModal, onSubmit, initialData }) => {
     const initialValues = initialData || {
         title: '',
-        me: '',
         message: '',
         image: null,
         imagePreview: initialData?.image || null,  // for previewing existing image

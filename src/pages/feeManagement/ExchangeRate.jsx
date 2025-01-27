@@ -9,16 +9,14 @@ import SearchFilter from '../../globalComponents/SearchFilter';
 import TableCan from '../../globalComponents/table/TableCan';
 import { fee_management_data } from '../../dummyData/Data';
 import FeeManagementRow from './components/FeeManagementRow';
-import FeesManagementModal from './components/FeesManagementModal';
+import ExchangeRateModal from './components/ExchangeRateModal';
 
 
-const FeeManagement = () => {
+const ExchangeRate = () => {
     const [showFeemodel, setshowFeemodel] = useState(false)
     const tabs = [
-        { value: 'send', name: 'send' },
         { value: 'buy', name: 'buy' },
         { value: 'swap', name: 'swap' },
-        { value: 'withdraw', name: 'withdraw' },
     ]
     const periodFilter = {
         options: [
@@ -110,7 +108,7 @@ const FeeManagement = () => {
                     TrName={FeeManagementRow}
                 />
             </div>
-            {showFeemodel && <FeesManagementModal
+            {showFeemodel && <ExchangeRateModal
                 closeModal={() => setshowFeemodel(false)}
                 onSubmit={onSubmit}
             />}
@@ -118,4 +116,4 @@ const FeeManagement = () => {
     )
 }
 
-export default FeeManagement
+export default ExchangeRate;
