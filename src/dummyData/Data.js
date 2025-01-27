@@ -457,3 +457,36 @@ export const market_data = [
   }
 ]
  
+
+
+
+export const fee_management_data = {
+  "send": [
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" }
+  ],
+  "buy": [
+      { "charge": "$16", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" }
+  ],
+  "swap": [
+      { "charge": "$17", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" }
+  ],
+  "withdraw": [
+      { "charge": "$18", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "inactive", "date": "01-01-24 / 11:23 AM" },
+      { "charge": "$15", "percentage": "0.5%", "status": "active", "date": "01-01-24 / 11:23 AM" }
+  ]
+}

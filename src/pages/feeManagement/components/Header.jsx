@@ -1,9 +1,10 @@
 import React from 'react'
 import Filter from '../../../globalComponents/Filter';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Header = ({ handleFilterValue }) => {
+const Header = () => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     // Extract the last segment from the pathname
     const getLastSegment = () => {
@@ -17,13 +18,16 @@ const Header = ({ handleFilterValue }) => {
     ]
     // making match heading with tabs values 
     const activeTab = tabs.find(tab => tab.value == getLastSegment());
+    const handleFilterValue = (value)=>{
+        navigate(`/fee/${value}`);
+    }
     return (
         <div className='flex items-center justify-between gap-8'>
             <h1 className='text-4xl font-bold'>Fee Management</h1>
             <Filter
                 tabs={tabs}
                 activeTab={activeTab.name}
-                handleValue={handleFilterValue ? handleFilterValue : () => { return }}
+                handleValue={handleFilterValue}
             />
         </div>
     )

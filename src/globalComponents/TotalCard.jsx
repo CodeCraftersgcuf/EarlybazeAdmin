@@ -23,9 +23,9 @@ const TotalCard = ({ icon, iconBg, heading, subheading, cardValue, cardUnit, val
                         <div className='flex flex-col justify-between h-full'>
                             <h1 className='font-bold text-sm'>{cardUnit}</h1>
                             {
-                            valueStatus != null && <div className='border border-[#257355] w-6 h-6 p-4 rounded-lg flex items-center justify-center'>
-                                {valueStatus ? <i className="bi bi-arrow-up text-green-500"></i> : <i className="bi bi-arrow-down text-red-500"></i>}
-                            </div>
+                                valueStatus != null && <div className='border border-[#257355] w-6 h-6 p-4 rounded-lg flex items-center justify-center'>
+                                    {valueStatus ? <i className="bi bi-arrow-up text-green-500"></i> : <i className="bi bi-arrow-down text-red-500"></i>}
+                                </div>
                             }
                         </div>
                     </div>

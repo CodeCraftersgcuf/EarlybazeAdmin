@@ -52,8 +52,8 @@ const UserRow = ({ displayData, index }) => {
             </td>
             <td className="py-2">
                 <div className='flex items-center gap-4 w-fit'>
-                    <button className='bg-[#25AE7A] px-4 rounded-xl py-2 '>Customer Details</button>
-                    <button className='bg-[#084B82] px-4 rounded-xl py-2 '>Transactions</button>
+                    <Link to={`/user/management/customer/${displayData.name}/detail`}><button className='bg-[#25AE7A] px-4 rounded-xl py-2 '>Customer Details</button></Link>
+                    <Link to={`/user/management/customer/${displayData.name}/transactions`} className='bg-[#084B82] px-4 rounded-xl py-2 '>Transactions</Link>
                 </div>
             </td>
             <td>
@@ -64,7 +64,7 @@ const UserRow = ({ displayData, index }) => {
                     <div className="bg-theme-light p-4 flex flex-col gap-4">
                         <div className="flex flex-col gap-4">
                             {options.map((item, index) => (
-                                <Link to={'#'} key={index}>
+                                <Link to={`/user/management/customer/${displayData.name}/notifications`} key={index}>
                                     <div className="flex items-center text-white gap-4 p-2 rounded-md">
                                         <img
                                             src={item.icon}
