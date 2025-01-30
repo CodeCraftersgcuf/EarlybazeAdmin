@@ -1,5 +1,5 @@
 import React from 'react';
-import MoreDropdown from '../../userManagement/components/MoreDropdown';
+import MoreDropdown from '../../../globalComponents/MoreDropdown';
 
 const PayoutRulesRow = ({ displayData, index }) => {
     return (

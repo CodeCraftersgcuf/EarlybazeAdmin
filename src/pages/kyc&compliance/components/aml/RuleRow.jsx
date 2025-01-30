@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MoreDropdown from '../../../userManagement/components/MoreDropdown';
+import MoreDropdown from '../../../../globalComponents/MoreDropdown';
 import EditIcon from '../../../../assets/icons/edit.png'
 import delIcon from '../../../../assets/icons/delIcon.png'
 import duplicate from '../../../../assets/icons/duplicate.png'

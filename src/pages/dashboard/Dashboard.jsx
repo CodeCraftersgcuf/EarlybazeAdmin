@@ -178,15 +178,10 @@ const Dashboard = () => {
         <div className="md:col-span-7">
           <TableCan
             showHeading={true}
-            // table heading
             heading={"recent transactions"}
-            // th in first tr
             headerTr={transactions_headerTr}
-            // td data display
             dataTr={transactions}
-            // name of tr using
             TrName={RecetTransactionTr}
-            // button ButtonName and ButtonLink
             ButtonLink={"#"}
             ButtonName={"view all"}
           />
@@ -194,15 +189,10 @@ const Dashboard = () => {
         <div className="md:col-span-5">
           <TableCan
             showHeading={true}
-            // table heading
             heading={"Crypto Wallet"}
-            // th in first tr
             headerTr={cryptoPrices_headerTr}
-            // td data display
             dataTr={cryptoPrices_DataTr}
-            // name of tr using
             TrName={CryptoTr}
-            // button ButtonName and ButtonLink
             ButtonLink={"#"}
             ButtonName={"view all"}
           />

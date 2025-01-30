@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditIcon from '../../../../assets/icons/edit.png';
 import delIcon from '../../../../assets/icons/delIcon.png';
-import MoreDropdown from '../../../userManagement/components/MoreDropdown';
+import MoreDropdown from '../../../../globalComponents/MoreDropdown';
 import kycDetial from '../../../../assets/icons/kycDetial.png';
 import KYCDetailsModal from './KYCDetailsModal';
 
