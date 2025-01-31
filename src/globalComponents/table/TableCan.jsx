@@ -10,8 +10,9 @@ const TableCan = ({
   TrName,
   showHeading = false,
 }) => {
+  console.log(dataTr , " : tablecan datetr");
   return (
-    <div className="border border-green-800 rounded-lg">
+    <div className="border border-green-800 rounded-lg overflow-y-visible">
       {showHeading && (
         <div className="flex items-center justify-between gap-2 p-4">
           <h1 className="text-2xl font-bold capitalize">{heading}</h1>
@@ -21,16 +22,14 @@ const TableCan = ({
           />
         </div>
       )}
-      <div className="overflow-x-visible overflow-y-auto">
+      <div className="overflow-x-auto overflow-y-visible rounded-lg">
         <table className="min-w-full table-auto border-collapse">
           <thead className="bg-[#01190F] text-white capitalize">
             <tr>
               {headerTr.map((item, index) => (
                 <th
                   key={index}
-                  className={`p-4 ${
-                    item === "Action" ? "text-center" : "text-left"
-                  } capitalize`}
+                  className={`p-4 ${item === "Action" ? "text-center" : "text-left"} capitalize`}
                 >
                   {item}
                 </th>
@@ -38,9 +37,9 @@ const TableCan = ({
             </tr>
           </thead>
           <tbody>
-            {dataTr.length > 0 ? dataTr.map((transaction, index) => (
-              <TrName displayData={transaction} index={index} key={index} />
-            )) :  (
+            {dataTr.length > 0 ? dataTr.map((data, index) => (
+              <TrName key={index} displayData={data} index={index} />
+            )) : (
               <tr className="bg-green-950">
                 <td colSpan={`${headerTr.length}`} className="text-center py-2 px-4">No Data Found</td>
               </tr>

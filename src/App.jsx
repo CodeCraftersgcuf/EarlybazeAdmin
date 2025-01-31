@@ -41,12 +41,15 @@ import AccountNotification from "./pages/userManagement_Subpages/account_detail/
 import AccountTransactions from "./pages/userManagement_Subpages/All_transactions/AccountTransactions";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import VirtualCard from "./pages/wallets/virtual_card/VirtualCard";
+import ViewWallet from "./pages/wallets/virtual_card/ViewWallet";
+import ViewWallet_ETH from "./pages/wallets/virtual_card/ViewWallet_ETH";
+import MasterCard from "./pages/wallets/master_card/MasterCard";
 
 const queryClient = new QueryClient();
 
 function App() {
   const [count, setCount] = useState(0);
-
   return (
     <>
       <QueryClientProvider client={queryClient}>
@@ -55,14 +58,20 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/" element={<Layout />}>
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="wallet/virtual" element={<NotFound />} />
-              <Route path="wallet/master" element={<NotFound />} />
               <Route path="Transactions" element={<NotFound />} />
               <Route path="MarketData" element={<MarketData />} />
               <Route path="security" element={<Security />} />
               <Route path="report&analytics" element={<Analytics />} />
               <Route path="support" element={<Support />} />
               <Route path="teamChat" element={<NotFound />} />
+
+
+              {/* wallets */}
+              <Route path="wallet/virtual" element={<VirtualCard />} />
+              <Route path="wallet/virtual/:username/details" element={<ViewWallet />} />
+              <Route path="wallet/virtual/:username/Eth/details" element={<ViewWallet_ETH />} />
+              <Route path="wallet/master" element={<MasterCard />} />
+
 
               {/* user management  */}
               <Route path="user/management" element={<UserManagement />} />

@@ -1,5 +1,5 @@
 import React from 'react'
-import MoreDropdown from './MoreDropdown'
+import MoreDropdown from '../../../globalComponents/MoreDropdown'
 // c:\Users\Nouman Ahmad\Downloads\bell.png 
 // c:\Users\Nouman Ahmad\Downloads\Vector.png 
 // c:\Users\Nouman Ahmad\Downloads\Cardholder.png

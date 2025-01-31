@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MoreDropdown from '../../../userManagement/components/MoreDropdown';
+import MoreDropdown from '../../../../globalComponents/MoreDropdown';
 import editIcon from '../../../../assets/icons/edit.png';
 import TradeLimitModel from './TradeLimitModel';// Assuming you have a modal for editing
 

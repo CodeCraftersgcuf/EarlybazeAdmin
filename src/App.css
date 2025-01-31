@@ -48,3 +48,24 @@
 .text-theme-bright-light {
     color: #00bd78;
 }
+
+.add-wallet-modal {
+    background-color: #064e3b; /* A deep green background */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.network-item {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.network-item.selected {
+    background-color: #046307; /* A slightly different green */
+}
+
+.toggle {
+    cursor: pointer;
+}
