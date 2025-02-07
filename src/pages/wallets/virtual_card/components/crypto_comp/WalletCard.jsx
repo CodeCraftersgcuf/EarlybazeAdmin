@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import btcIcon from '../../../../../assets/icons/DummyIcon/btc.png'; // Ensure the icon path is correct
 import MoreDropdown from '../../../../../globalComponents/MoreDropdown';
-import { walletOptions } from '../../../dummyData';
-import { h1 } from 'framer-motion/client';
+import AddressModel from '../../../master_card/component/AddressModel';
 
 const WalletCard = ({ wallet }) => {
+    const [ShowAddressModel, setShowAddressModel] = useState(false)
+    const addressKey = [
+        {
+            title: 'ethereum',
+            wallet: 'Ethereum',
+            key: 'aksdjakdj91829dj1in2d9j29dj12d',
+        },
+        {
+            title: 'ethereum',
+            wallet: 'trx',
+            key: 'aksdjakdj91829dj1in2d9j29dj12d',
+        },
+        {
+            title: 'ethereum',
+            wallet: 'Sol',
+            key: 'aksdjakdj91829dj1in2d9j29dj12d',
+        },
+    ]
     return (
         <div className="bg-theme-dark border relative border-green-950 rounded-lg p-4 text-white shadow-lg">
             <div className="flex items-center gap-4 mb-12">
@@ -27,14 +44,20 @@ const WalletCard = ({ wallet }) => {
             <div className="cursor-pointer absolute top-5 right-5">
                 <MoreDropdown iconClass="bi bi-three-dots-vertical" menuClass="bg-theme-dark min-w-[150px]" buttonClass='w-8 h-8 border-green-950'>
                     <div className="bg-theme-light p-4 flex flex-col gap-4">
-                        {
-                            walletOptions.map((item, index) => (
-                                <h1 className='text-lg capitalize' key={index}>{item}</h1>
-                            ))
-                        }
+                        <h1 className='text-lg capitalize'>Activities</h1>
+                        <h1 className='text-lg capitalize'>fund</h1>
+                        <h1 className='text-lg capitalize'>Freeze</h1>
+                        <h1 className='text-lg capitalize' onClick={()=>setShowAddressModel(true)}>View Address</h1>
+                        <h1 className='text-lg capitalize'>Set Token Status</h1>
                     </div>
                 </MoreDropdown>
             </div>
+            {
+                ShowAddressModel && <AddressModel
+                    onClose={() => setShowAddressModel(false)}
+                    datalist={addressKey}
+                />
+            }
         </div>
     );
 };

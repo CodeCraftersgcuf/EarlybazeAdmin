@@ -1,139 +1,167 @@
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import React, { useState } from 'react';
 import Overlay from '../../../../../../globalComponents/Overlay';
-import AddWalletSelectable from '../../../../../../globalComponents/AddWalletSelectable';
+import SearchInput from './SearchInput';
+import AddingButton from '../../../../../../globalComponents/AddingButton';
 
-// Validation Schema
-const validationSchema = Yup.object({
-    token: Yup.string().required('Token is required'),
-    network: Yup.string().required('Network is required'),
-    status: Yup.string().required('Status is required'),
-    reason: Yup.string().when('status', {
-        is: 'Unavailable',
-        then: Yup.string().required('Reason is required'),
-    }),
-});
-
-// Options for AddWalletSelectable Components
-const tokenOptions = [
-    { value: 'BTC', name: 'Bitcoin' },
-    { value: 'ETH', name: 'Ethereum' },
-    { value: 'XRP', name: 'Ripple' },
+// Mock networks data
+const networksData = [
+    {
+        id: 1,
+        name: 'Ethereum',
+        symbol: 'ETH',
+        isExpandable: true,
+        expanded: false,
+        selected: false,
+        subNetworks: [
+            { id: 11, name: 'Ethereum Mainnet', symbol: 'ETH', selected: true },
+            { id: 12, name: 'Arbitrum', symbol: 'ARB', selected: false },
+            { id: 13, name: 'Optimism', symbol: 'OP', selected: false }
+        ]
+    },
+    { id: 2, name: 'Tron', symbol: 'TRX', selected: false, isExpandable: false },
+    { id: 3, name: 'Arbitrum', symbol: 'ARB', selected: true, isExpandable: false },
+    { id: 4, name: 'Solana', symbol: 'SOL', selected: false, isExpandable: false },
+    { id: 5, name: 'Solana', symbol: 'SOL', selected: true, isExpandable: false },
+    { id: 6, name: 'Solana', symbol: 'SOL', selected: true, isExpandable: false }
 ];
 
-const networkOptions = [
-    { value: 'Bitcoin', name: 'Bitcoin Network' },
-    { value: 'Ethereum', name: 'Ethereum Network' },
-    { value: 'Ripple', name: 'Ripple Network' },
-];
+const AddWalletModal = ({ onClose, onSubmit }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [networks, setNetworks] = useState(networksData);
 
-const statusOptions = [
-    { value: 'Available', name: 'Available' },
-    { value: 'Unavailable', name: 'Unavailable' },
-];
+    // Toggle sub-network selection
+    const toggleSubNetworkSelection = (parentId, subId) => {
+        setNetworks(networks.map(network => {
+            if (network.id === parentId && network.subNetworks) {
+                const updatedSubNetworks = network.subNetworks.map(sub =>
+                    sub.id === subId ? { ...sub, selected: !sub.selected } : sub
+                );
+                const selectedCount = updatedSubNetworks.filter(sub => sub.selected).length;
+                return {
+                    ...network,
+                    subNetworks: updatedSubNetworks,
+                    selected: selectedCount > 0,
+                    selectedCount
+                };
+            }
+            return network;
+        }));
+    };
 
-const TokenAvailabilityModal = ({ onClose, onSubmit }) => {
+    // Expand/collapse sub-networks
+    const toggleExpand = (id) => {
+        setNetworks(networks.map(network =>
+            network.id === id ? { ...network, expanded: !network.expanded } : network
+        ));
+    };
+
+    // Toggle single network selection
+    const toggleNetworkSelection = (id) => {
+        setNetworks(networks.map(network =>
+            network.id === id ? { ...network, selected: !network.selected } : network
+        ));
+    };
+
+    // Handle search
+    const handleSearch = (term) => {
+        setSearchTerm(term);
+    };
+
+    // Filter networks based on search term
+    const filteredNetworks = networks.filter(network =>
+        network.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    // Handle submission
+    const handleSubmit = () => {
+        // Collecting selected networks and sub-networks
+        const selectedNetworks = networks.map(network => ({
+            ...network,
+            subNetworks: network.subNetworks?.filter(sub => sub.selected)
+        })).filter(network => network.selected || network.subNetworks?.length);
+
+        console.log('Selected Networks:', selectedNetworks);
+        onSubmit(selectedNetworks); // Trigger parent function with selected networks
+    };
+
     return (
         <Overlay>
-            <div className="bg-theme-dark p-6 rounded-lg text-white w-[400px] absolute top-10 right-10">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-4 relative">
-                    <h2 className="text-xl font-bold text-center w-full">Token Availability</h2>
-                    <button onClick={()=>onClose()} className="text-2xl absolute top-1/2 transform -translate-y-1/2 right-0">
-                        <i className="bi bi-x-circle"></i>
-                    </button>
+            <div className="bg-theme-dark p-6 rounded-lg text-white w-[450px] absolute top-10 right-10">
+                <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xl font-bold">Add Wallet</h2>
+                    <button onClick={onClose} className="text-2xl">✕</button>
                 </div>
-
-                {/* Formik Form */}
-                <Formik
-                    initialValues={{
-                        token: '',
-                        network: '',
-                        status: '',
-                        reason: '',
-                    }}
-                    validationSchema={validationSchema}
-                    onSubmit={(values, { resetForm }) => {
-                        console.log('✅ Submitted Data:', values);
-                        onSubmit(values);
-                        resetForm();
-                        onClose();
-                    }}
-                >
-                    {({ errors, touched, values, setFieldValue, handleSubmit }) => (
-                        <Form className="flex flex-col gap-4">
-                            {/* Token Selection */}
-                            <div>
-                                <h1 className="mb-2">Token</h1>
-                                <AddWalletSelectable
-                                    style="mb-2"
-                                    options={tokenOptions}
-                                    heading="Select Token"
-                                    selectedValue={values.token} // ✅ Make AddWalletSelectable controlled
-                                    handleOptionSelect={(val) => setFieldValue('token', val)}
-                                />
-                                {errors.token && touched.token && (
-                                    <p className="text-red-500 text-xs">{errors.token}</p>
+                <div className="flex gap-4 mb-4">
+                    <SearchInput onSearch={handleSearch} />
+                    <AddingButton
+                        title="Add"
+                        handlefunction={handleSubmit}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    {filteredNetworks.map(network => (
+                        <div key={network.id}>
+                            <div className={`bg-green-950 p-4 rounded-lg ${network.isExpandable && network.expanded && 'rounded-b-none'} flex justify-between items-center`}>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-6 h-6 bg-white rounded-full"></div>
+                                    <div>
+                                        <p className="font-semibold">{network.name}</p>
+                                        <p className="text-sm text-gray-400">{network.symbol}</p>
+                                    </div>
+                                </div>
+                                {network.isExpandable && (
+                                    <p className="text-gray-400">
+                                        {network.selectedCount ? `${network.selectedCount} Networks` : `${network.subNetworks.length} Networks`}
+                                    </p>
                                 )}
-                            </div>
-
-                            {/* Network Selection */}
-                            <div>
-                                <h1 className="mb-2">Network</h1>
-                                <AddWalletSelectable
-                                    style="mb-2"
-                                    options={networkOptions}
-                                    heading="Select Network"
-                                    selectedValue={values.network} // ✅ Make AddWalletSelectable controlled
-                                    handleOptionSelect={(val) => setFieldValue('network', val)}
-                                />
-                                {errors.network && touched.network && (
-                                    <p className="text-red-500 text-xs">{errors.network}</p>
-                                )}
-                            </div>
-
-                            {/* Status Selection */}
-                            <div>
-                                <h1 className="mb-2">Status</h1>
-                                <AddWalletSelectable
-                                    style="mb-2"
-                                    options={statusOptions}
-                                    heading="Select Status"
-                                    selectedValue={values.status} // ✅ Make AddWalletSelectable controlled
-                                    handleOptionSelect={(val) => setFieldValue('status', val)}
-                                />
-                                {errors.status && touched.status && (
-                                    <p className="text-red-500 text-xs">{errors.status}</p>
-                                )}
-                            </div>
-
-                            {/* Reason Input (Shown only if Unavailable is selected) */}
-                            {values.status === 'Unavailable' && (
-                                <div>
-                                    <h1 className="mb-2">Reason</h1>
-                                    <Field
-                                        type="text"
-                                        name="reason"
-                                        placeholder="If unavailable, enter reason"
-                                        className="p-3 bg-green-800 rounded-md w-full outline-none mb-2"
+                                {network.isExpandable ? (
+                                    <div className="flex items-center gap-4">
+                                        <input
+                                            type="checkbox"
+                                            checked={network.selected}
+                                            onChange={() => toggleExpand(network.id)}
+                                            className="w-5 h-5"
+                                        />
+                                        <button onClick={() => toggleExpand(network.id)}>
+                                            <i className={`bi bi-chevron-${network.expanded ? "up" : "down"}`}></i>
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <input
+                                        type="checkbox"
+                                        checked={network.selected}
+                                        onChange={() => toggleNetworkSelection(network.id)}
+                                        className="w-5 h-5"
                                     />
-                                    {errors.reason && touched.reason && (
-                                        <p className="text-red-500 text-xs">{errors.reason}</p>
-                                    )}
+                                )}
+                            </div>
+                            {network.isExpandable && network.expanded && (
+                                <div className="p-2 bg-green-900 rounded-lg rounded-t-none flex flex-col gap-2">
+                                    {network.subNetworks.map(sub => (
+                                        <div key={sub.id} className="bg-green-950 p-3 rounded-lg flex justify-between items-center">
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-6 h-6 bg-white rounded-full"></div>
+                                                <div>
+                                                    <p className="font-semibold">{sub.name}</p>
+                                                    <p className="text-sm text-gray-400">{sub.symbol}</p>
+                                                </div>
+                                            </div>
+                                            <input
+                                                type="checkbox"
+                                                checked={sub.selected}
+                                                onChange={() => toggleSubNetworkSelection(network.id, sub.id)}
+                                                className="w-5 h-5"
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
                             )}
-
-                            {/* Save Button */}
-                            <div className="mt-6">
-                                <button type="button" className="py-4 w-full bg-green-600 rounded-lg">Save</button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Overlay>
     );
 };
 
-export default TokenAvailabilityModal;
+export default AddWalletModal;
