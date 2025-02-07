@@ -45,6 +45,8 @@ import VirtualCard from "./pages/wallets/virtual_card/VirtualCard";
 import ViewWallet from "./pages/wallets/virtual_card/ViewWallet";
 import ViewWallet_ETH from "./pages/wallets/virtual_card/ViewWallet_ETH";
 import MasterCard from "./pages/wallets/master_card/MasterCard";
+import Transactions from "./pages/transactions/Transactions";
+import MasterCard_ETh from "./pages/wallets/master_card/MasterCard_ETh";
 
 const queryClient = new QueryClient();
 
@@ -58,19 +60,22 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/" element={<Layout />}>
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="Transactions" element={<NotFound />} />
               <Route path="MarketData" element={<MarketData />} />
               <Route path="security" element={<Security />} />
               <Route path="report&analytics" element={<Analytics />} />
               <Route path="support" element={<Support />} />
-              <Route path="teamChat" element={<NotFound />} />
+              {/* <Route path="teamChat" element={<NotFound />} /> */}
 
+              <Route path="Transactions"
+                element={<Transactions />}
+              />
 
               {/* wallets */}
               <Route path="wallet/virtual" element={<VirtualCard />} />
               <Route path="wallet/virtual/:username/details" element={<ViewWallet />} />
               <Route path="wallet/virtual/:username/Eth/details" element={<ViewWallet_ETH />} />
               <Route path="wallet/master" element={<MasterCard />} />
+              <Route path="wallet/master/Eth" element={<MasterCard_ETh />} />
 
 
               {/* user management  */}

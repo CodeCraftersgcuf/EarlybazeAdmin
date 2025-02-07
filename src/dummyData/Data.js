@@ -116,12 +116,12 @@ import {
       icon: support_dash,
       sublinks: [],
     },
-    {
-      name: "Team Chat",
-      link: "/teamChat",
-      icon: team_dash,
-      sublinks: [],
-    },
+    // {
+    //   name: "Team Chat",
+    //   link: "/teamChat",
+    //   icon: team_dash,
+    //   sublinks: [],
+    // },
     {
       name: "Settings",
       link: "/Settings/admin",

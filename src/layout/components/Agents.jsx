@@ -17,7 +17,7 @@ const Agents = ({ agents = [] }) => {
             </div>
             <div className='flex flex-col  items-center justify-center'>
                 <h1 className='mb-2 text-sm opacity-[0.5] font-bold'>New</h1>
-                <Link to={'#'}>
+                <Link to={'/user/management'}>
                     <div className='rounded-full flex flex-col  items-center justify-center bg-white text-black font-bold w-10 h-10'>
                     <i className="bi bi-plus font-bold"></i>
                     </div>

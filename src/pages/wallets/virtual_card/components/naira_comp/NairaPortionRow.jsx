@@ -7,29 +7,26 @@ import AddWalletModal from '../crypto_comp/addwallet/AddWalletModal';
 const NairaPortionRow = ({ displayData = {}, index = 1 }) => {
     const [showModal, setShowModal] = useState(false);
     const [showWalletModal, setShowWalletModal] = useState(false);
-    const [selectedTokenData, setSelectedTokenData] = useState(null);
-    const [triggerWalletModal, setTriggerWalletModal] = useState(false);
+
+    // Log the state changes after submission
+    useEffect(() => {
+        console.log('Updated showModal:', showModal);
+    }, [showModal]);  // Trigger when showModal changes
 
     useEffect(() => {
-        if (triggerWalletModal) {
-            setShowWalletModal(true);
-            setTriggerWalletModal(false);
-            setShowModal(false)
-        }
-    }, [triggerWalletModal]);
+        console.log('Updated showWalletModal:', showWalletModal);
+    }, [showWalletModal]);  // Trigger when showWalletModal changes
 
     const handleStatusChange = (formData) => {
         console.log("Token Data Submitted:", formData);
-        setSelectedTokenData(formData);
-        setShowModal(false);
-        setTimeout(() => {
-            setTriggerWalletModal(true);
-        }, 300);
+        // Show the AddWalletModal after submitting the token modal
+        setShowModal(false);  // Close the TokenAvailabilityModal
+        setShowWalletModal(true);  // Open the AddWalletModal
     };
 
     const handleWalletSubmit = (walletData) => {
         console.log("Wallet Data Submitted:", walletData);
-        setShowWalletModal(false);
+        setShowWalletModal(false);  // Close the AddWalletModal after submitting
     };
 
     return (
@@ -76,7 +73,7 @@ const NairaPortionRow = ({ displayData = {}, index = 1 }) => {
 
             {showModal && (
                 <TokenAvailabilityModal
-                    onSubmit={handleStatusChange}
+                    onSubmit={handleStatusChange}  // Pass the handleStatusChange function
                     onClose={() => setShowModal(false)}
                 />
             )}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddingButton from '../../../globalComponents/AddingButton'
 import TotalCard from '../../../globalComponents/TotalCard'
 import wallet_image from '../../../assets/icons/Wallet.png'
@@ -8,8 +8,10 @@ import SearchFilter from '../../../globalComponents/SearchFilter'
 import WalletCard from '../virtual_card/components/crypto_comp/WalletCard'
 import TableCan from '../../../globalComponents/table/TableCan'
 import NairaPortionRow from '../virtual_card/components/naira_comp/NairaPortionRow'
+import AddWalletModal from '../virtual_card/components/crypto_comp/addwallet/AddWalletModal'
 
 const MasterCard = () => {
+    const [showWalletModal, setShowWalletModal] = useState(false);
     const cardData = [
         {
             icon: wallet_image,
@@ -134,6 +136,7 @@ const MasterCard = () => {
                 <AddingButton
                     title={'add wallet'}
                     buttonClass='px-8 py-2'
+                    handlefunction={()=>setShowWalletModal(true)}
                 />
             </div>
             <div className='grid grid-cols-3 gap-4 my-8 mb-20'>
@@ -245,6 +248,12 @@ const MasterCard = () => {
                     />
                 </div>
             </div>
+            {showWalletModal && (
+                <AddWalletModal
+                    onSubmit={handleFilter}
+                    onClose={() => setShowWalletModal(false)}
+                />
+            )}
         </>
     )
 }

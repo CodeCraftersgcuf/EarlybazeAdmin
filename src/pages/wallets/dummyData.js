@@ -2,5 +2,6 @@ export const walletOptions = [
     'activities',
     'fund',
     'freeze',
-    'View Address'
+    'View Address',
+    'Set token status'
 ]

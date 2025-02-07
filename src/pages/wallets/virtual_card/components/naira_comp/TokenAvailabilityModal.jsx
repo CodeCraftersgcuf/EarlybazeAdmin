@@ -35,6 +35,8 @@ const statusOptions = [
 ];
 
 const TokenAvailabilityModal = ({ onClose, onSubmit }) => {
+    console.log("function of close",onClose);
+    
     return (
         <Overlay>
             <div className="bg-theme-dark p-6 rounded-lg text-white w-[400px] absolute top-10 right-10">
@@ -56,7 +58,7 @@ const TokenAvailabilityModal = ({ onClose, onSubmit }) => {
                     }}
                     validationSchema={validationSchema}
                     onSubmit={(values, { resetForm }) => {
-                        console.log('✅ Submitted Data:', values);
+                        console.log('✅ Submitted Data from token model:', values);
                         onSubmit(values);
                         resetForm();
                         onClose();
