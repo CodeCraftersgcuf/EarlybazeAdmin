@@ -5,7 +5,7 @@ import MoreDropdown from '../../../globalComponents/MoreDropdown'
 // c:\Users\Nouman Ahmad\Downloads\Cardholder.png
 import bellIcon from '../../../assets/icons/bell.png'
 import Vector from '../../../assets/icons/Vector.png'
-import CardHolder from '../../../assets/icons/CardHolder.png'
+import bellIcon from '../../../assets/icons/bell.png'
 import { Link } from 'react-router-dom'
 
 
@@ -14,7 +14,7 @@ const UserRow = ({ displayData, index }) => {
         {
             'navigationLink': '#',
             'title': 'View Wallet',
-            'icon': CardHolder
+            'icon': bellIcon
         },
         {
             'navigationLink': '#',
