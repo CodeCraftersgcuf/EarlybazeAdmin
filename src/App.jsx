@@ -9,7 +9,7 @@ import "./App.css";
 import Layout from "./layout/Layout";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Login from "./auth/login";
+import Login from "./auth/Login";
 import UserManagement from "./pages/userManagement/UserManagement";
 import Analytics from "./pages/analytic/Analytics";
 import NotFound from "./pages/notFound";
@@ -66,17 +66,20 @@ function App() {
               <Route path="support" element={<Support />} />
               {/* <Route path="teamChat" element={<NotFound />} /> */}
 
-              <Route path="Transactions"
-                element={<Transactions />}
-              />
+              <Route path="Transactions" element={<Transactions />} />
 
               {/* wallets */}
               <Route path="wallet/virtual" element={<VirtualCard />} />
-              <Route path="wallet/virtual/:username/details" element={<ViewWallet />} />
-              <Route path="wallet/virtual/:username/Eth/details" element={<ViewWallet_ETH />} />
+              <Route
+                path="wallet/virtual/:username/details"
+                element={<ViewWallet />}
+              />
+              <Route
+                path="wallet/virtual/:username/Eth/details"
+                element={<ViewWallet_ETH />}
+              />
               <Route path="wallet/master" element={<MasterCard />} />
               <Route path="wallet/master/Eth" element={<MasterCard_ETh />} />
-
 
               {/* user management  */}
               <Route path="user/management" element={<UserManagement />} />
