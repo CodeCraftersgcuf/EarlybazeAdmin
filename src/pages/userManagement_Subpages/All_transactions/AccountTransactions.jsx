@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CvIcon from '../../../assets/icons/ReadCvLogo.png';
-import wallet from '../../../assets/icons/wallet.png';
+import wallet from '../../../assets/icons/Cardholder.png';
 import TotalCard from '../../../globalComponents/TotalCard';
 import Money from '../../../assets/icons/Money.png';
 import Filter from '../../../globalComponents/Filter';
