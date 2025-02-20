@@ -3,7 +3,6 @@ import MoreDropdown from '../../../globalComponents/MoreDropdown'
 // c:\Users\Nouman Ahmad\Downloads\bell.png 
 // c:\Users\Nouman Ahmad\Downloads\Vector.png 
 // c:\Users\Nouman Ahmad\Downloads\Cardholder.png
-import bellIcon from '../../../assets/icons/bell.png'
 import Vector from '../../../assets/icons/Vector.png'
 import bellIcon from '../../../assets/icons/bell.png'
 import { Link } from 'react-router-dom'
