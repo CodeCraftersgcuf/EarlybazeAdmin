@@ -12,7 +12,6 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./auth/Login";
 import UserManagement from "./pages/userManagement/UserManagement";
 import Analytics from "./pages/analytic/Analytics";
-import NotFound from "./pages/notFound";
 import "../src/constants/fonts.css";
 import MarketData from "./pages/marketData/MarketData";
 import Security from "./pages/security/Security";
