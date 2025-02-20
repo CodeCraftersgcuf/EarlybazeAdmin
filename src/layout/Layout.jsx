@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from './SideBar';
+import Sidebar from './Sidebar';
 import { Outlet } from 'react-router-dom';
-import logo from '../assets/images/logo.png'
 import Profile from './components/Profile';
 import { Topbar_profile_Left } from '../dummyData/Data';
 import Agents from './components/Agents';
