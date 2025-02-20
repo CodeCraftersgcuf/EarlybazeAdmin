@@ -1,5 +1,5 @@
 import React from 'react'
-import wallet_image from "../../../assets/icons/Wallet.png";
+import Wallet from "../../../assets/icons/Wallet.png";
 import BTC from "../../../assets/icons/DummyIcon/btc.png";
 import trx from "../../../assets/icons/DummyIcon/trx.png";
 import usdt from "../../../assets/icons/DummyIcon/usdt.png";
@@ -14,7 +14,7 @@ import CryptoBalanceRow from '../components/CryptoBalanceRow';
 const Crypto = () => {
     const dashboard_cardValues = [
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Wallets",
@@ -22,7 +22,7 @@ const Crypto = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Balance in USD",
@@ -30,7 +30,7 @@ const Crypto = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Balance in NGN",

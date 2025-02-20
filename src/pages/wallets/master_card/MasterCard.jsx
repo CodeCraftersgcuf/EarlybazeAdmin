@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AddingButton from '../../../globalComponents/AddingButton'
 import TotalCard from '../../../globalComponents/TotalCard'
-import wallet_image from '../../../assets/icons/Wallet.png'
+import Wallet from '../../../assets/icons/Wallet.png'
 import Dropdown from '../../../globalComponents/Dropdown'
 import Button from '../../../globalComponents/Button'
 import SearchFilter from '../../../globalComponents/SearchFilter'
@@ -14,7 +14,7 @@ const MasterCard = () => {
     const [showWalletModal, setShowWalletModal] = useState(false);
     const cardData = [
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total",
             subheading: "wallets",
@@ -22,7 +22,7 @@ const MasterCard = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "active",
             subheading: "wallets",
@@ -30,7 +30,7 @@ const MasterCard = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "inactive",
             subheading: "wallets",

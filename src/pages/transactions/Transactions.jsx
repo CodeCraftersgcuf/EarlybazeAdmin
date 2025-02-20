@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CvIcon from '../../assets/icons/ReadCvLogo.png';
-import wallet from '../../../assets/icons/Wallet.png';
+import Wallet from '../../../assets/icons/Wallet.png';
 import TotalCard from '../../globalComponents/TotalCard';
 import Money from '../../assets/icons/Money.png';
 import Filter from '../../globalComponents/Filter';
@@ -33,7 +33,7 @@ const Transactions = () => {
       valueStatus: false,
     },
     {
-      icon: wallet,
+      icon: Wallet,
       iconBg: 'bg-[#CA1919]',
       heading: 'total',
       subheading: 'wallets',

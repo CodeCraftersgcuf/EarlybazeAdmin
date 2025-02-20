@@ -3,13 +3,13 @@ import TotalCard from '../../../../../globalComponents/TotalCard';
 import Dropdown from '../../../../../globalComponents/Dropdown';
 import WalletCard from '../crypto_comp/WalletCard';
 import AddWalletModal from '../crypto_comp/addwallet/AddWalletModal';
-import wallet_image from '../../../../../assets/icons/Wallet.png';
+import Wallet from '../../../../../assets/icons/Wallet.png';
 
 const ViewWalletPortion_Crypto = ({ showAdd, closeadd }) => {
     const cardData = [
-        { icon: wallet_image, iconBg: "bg-[#CA1919]", heading: "Total", subheading: "Wallets", cardValue: "1,750", valueStatus: true },
-        { icon: wallet_image, iconBg: "bg-[#CA1919]", heading: "Active", subheading: "Wallets", cardValue: "25,000", valueStatus: true },
-        { icon: wallet_image, iconBg: "bg-[#CA1919]", heading: "Inactive", subheading: "Wallets", cardValue: "750", valueStatus: true },
+        { icon: Wallet, iconBg: "bg-[#CA1919]", heading: "Total", subheading: "Wallets", cardValue: "1,750", valueStatus: true },
+        { icon: Wallet, iconBg: "bg-[#CA1919]", heading: "Active", subheading: "Wallets", cardValue: "25,000", valueStatus: true },
+        { icon: Wallet, iconBg: "bg-[#CA1919]", heading: "Inactive", subheading: "Wallets", cardValue: "750", valueStatus: true },
     ];
 
     const statusFilter = {

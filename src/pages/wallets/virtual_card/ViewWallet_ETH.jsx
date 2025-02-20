@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import AddingButton from '../../../globalComponents/AddingButton';
 import Filter from '../../../globalComponents/Filter';
-import wallet_image from "../../../assets/icons/Wallet.png";
+import Wallet from "../../../assets/icons/Wallet.png";
 import TotalCard from '../../../globalComponents/TotalCard';
 import Dropdown from '../../../globalComponents/Dropdown';
 import WalletCard from './components/crypto_comp/WalletCard';
@@ -67,7 +67,7 @@ const ViewWallet_ETH = () => {
     ];
     const cardData = [
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total",
             subheading: "wallets",
@@ -75,7 +75,7 @@ const ViewWallet_ETH = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "active",
             subheading: "wallets",
@@ -83,7 +83,7 @@ const ViewWallet_ETH = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "inactive",
             subheading: "wallets",

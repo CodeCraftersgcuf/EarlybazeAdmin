@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import wallet_image from "../../../assets/icons/Wallet.png";
+import Wallet from "../../../assets/icons/Wallet.png";
 import BTC from "../../../assets/icons/DummyIcon/btc.png";
 import trx from "../../../assets/icons/DummyIcon/trx.png";
 import usdt from "../../../assets/icons/DummyIcon/usdt.png";
@@ -20,7 +20,7 @@ const TokenUser = () => {
 
     const dashboard_cardValues = [
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Naira Wallets",
@@ -28,14 +28,14 @@ const TokenUser = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Balance",
             cardValue: "N120,000,000",
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total user",
             subheading: "Naira Wallet Transactions",

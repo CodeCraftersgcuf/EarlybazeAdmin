@@ -1,5 +1,5 @@
 import React from 'react'
-import wallet_image from "../../../../../assets/icons/Wallet.png";
+import Wallet from "../../../../../assets/icons/Wallet.png";
 import TotalCard from '../../../../../globalComponents/TotalCard';
 import Dropdown from '../../../../../globalComponents/Dropdown';
 import Button from '../../../../../globalComponents/Button';
@@ -10,7 +10,7 @@ import CryptoPortionRow from '../crypto_comp/CryptoPortionRow';
 const CryptoPortion = () => {
     const cardData = [
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "total",
             subheading: "wallets",
@@ -18,7 +18,7 @@ const CryptoPortion = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "active",
             subheading: "wallets",
@@ -26,7 +26,7 @@ const CryptoPortion = () => {
             valueStatus: true,
         },
         {
-            icon: wallet_image,
+            icon: Wallet,
             iconBg: "bg-[#CA1919]",
             heading: "inactive",
             subheading: "wallets",
