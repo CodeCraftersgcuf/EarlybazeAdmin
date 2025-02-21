@@ -83,7 +83,7 @@ function App() {
               {/* user management  */}
               <Route path="user/management" element={<UserManagement />} />
               <Route
-                path="user/management/customer/:username/detail"
+                path="user/management/customer/:id/detail"
                 element={<AccountDetail />}
               />
               <Route

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Filter = ({ tabs, handleValue , activeTab ,tabPadding = '4' }) => {
+const Filter = ({ tabs, handleValue , activeTab ,tabPadding = '2' }) => {
   const [activeTabs, setactiveTabs] = useState(activeTab);
 
   const handleTabClick = (tab) => {

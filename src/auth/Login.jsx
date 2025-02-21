@@ -8,13 +8,13 @@ const Login = () => {
             {/* set background image for col-span-4 */}
             <div className='col-span-3 bg-cover bg-center py-8 bg-no-repeat h-full' style={{ backgroundImage: `url(${login_frame_1})`} }>
                 <div className='transform translate-x-[40%]'>
-                    <h1 className='capitalize mb-8 flex flex-col gap-2 text-4xl font-bold w-[70%]'>
+                    <h1 className='capitalize mb-8 chivo-bold flex flex-col gap-2 text-4xl chivo-bold  w-[70%]'>
                         <span>Admin</span>
                         <span>Dashboard</span>
                     </h1>
                     <div className='h-fit text-white bg-black p-8 rounded-xl min-w-[400px]'>
-                        <h1 className='text-center text-2xl font-bold'>Login</h1>
-                        <h1 className='text-center opacity-75'>Login to your dashboard</h1>
+                        <h1 className='text-center text-2xl chivo-bold '>Login</h1>
+                        <h1 className='text-center chivo'>Login to your dashboard</h1>
                         <div className='mt-4'>
                             <LoginCan/>
                         </div>

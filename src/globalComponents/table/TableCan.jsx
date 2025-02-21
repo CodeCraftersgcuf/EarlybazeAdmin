@@ -15,7 +15,7 @@ const TableCan = ({
     <div className="border border-green-800 rounded-lg overflow-y-visible">
       {showHeading && (
         <div className="flex items-center justify-between gap-2 p-4">
-          <h1 className="text-2xl font-bold capitalize">{heading}</h1>
+          <h1 className="text-xl font-bold chivo capitalize">{heading}</h1>
           <Viewall_button
             navigationLink={ButtonLink}
             navigationName={ButtonName}
