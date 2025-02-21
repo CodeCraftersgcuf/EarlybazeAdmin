@@ -47,6 +47,7 @@ const CryptoPortion = () => {
     const tableHeaders = ["Name", "No of Wallets", "Total Funds", "Most Active", "Status", "Action", "More"];
     const tableBodys = [
         {
+            "id": 1,
             "name": "Alucard",
             "walletCount": 24,
             "totalFunds": "$12,500",
@@ -54,6 +55,7 @@ const CryptoPortion = () => {
             "status": "online"
         },
         {
+            "id": 2,
             "name": "Alex",
             "walletCount": 24,
             "totalFunds": "$12,500",
@@ -61,6 +63,7 @@ const CryptoPortion = () => {
             "status": "online"
         },
         {
+            "id": 3,
             "name": "Susan",
             "walletCount": 24,
             "totalFunds": "$12,500",
@@ -68,6 +71,7 @@ const CryptoPortion = () => {
             "status": "online"
         },
         {
+            "id": 4,
             "name": "Sharon",
             "walletCount": 24,
             "totalFunds": "$12,500",
@@ -75,6 +79,7 @@ const CryptoPortion = () => {
             "status": "offline"
         },
         {
+            "id": 5,
             "name": "Adam",
             "walletCount": 24,
             "totalFunds": "$12,500",
@@ -82,6 +87,7 @@ const CryptoPortion = () => {
             "status": "online"
         },
         {
+            "id": 6,
             "name": "Peter",
             "walletCount": 24,
             "totalFunds": "$12,500",

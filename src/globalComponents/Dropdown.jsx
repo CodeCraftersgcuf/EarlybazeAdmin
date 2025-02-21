@@ -41,9 +41,19 @@ const Dropdown = ({
                     {options.map((option) => (
                         <button
                             key={option.value}
-                            className="w-full px-4 py-2 text-left hover:bg-gray-100 hover:text-black capitalize"
+                            className="w-full px-4 py-2 text-left flex items-center gap-3 hover:bg-green-300 hover:text-black capitalize"
                             onClick={() => handleOptionClick(option)} // Call handler
                         >
+                            {/* Radio circle */}
+                            <span
+                                className={`w-5 h-5 flex items-center justify-center rounded-full border-2 ${
+                                    selectedOption === option.name ? "border-green-400" : "border-gray-500"
+                                }`}
+                            >
+                                {selectedOption === option.name && (
+                                    <span className="w-3 h-3 bg-green-400 rounded-full"></span>
+                                )}
+                            </span>
                             {option.name}
                         </button>
                     ))}

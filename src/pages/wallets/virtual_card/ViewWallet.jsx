@@ -10,7 +10,7 @@ const ViewWallet = () => {
     const { username } = useParams();
     const [showAddWallet, setShowAddWallet] = useState(false);
     const [selectedTab, setSelectedTab] = useState("crypto");
-
+    
     const tabs = [
         { name: 'crypto', value: 'crypto' },
         { name: 'naira', value: 'naira' },
@@ -34,10 +34,10 @@ const ViewWallet = () => {
                 <div className="flex items-center gap-4">
                     {selectedTab != "naira" &&<AddingButton
                         title="Add Wallet"
-                        buttonClass="py-4 text-xl px-8"
+                        buttonClass="py-2"
                         handlefunction={() => setShowAddWallet(true)}
                     />}
-                    <Filter tabs={tabs} activeTab={selectedTab} handleValue={handleTabChange} />
+                    <Filter tabPadding='2' tabs={tabs} activeTab={selectedTab} handleValue={handleTabChange} />
                 </div>
             </div>
 

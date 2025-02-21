@@ -10,7 +10,7 @@ const TableCan = ({
   TrName,
   showHeading = false,
 }) => {
-  console.log(dataTr , " : tablecan datetr");
+  console.log(dataTr, " : tablecan datetr");
   return (
     <div className="border border-green-800 rounded-lg overflow-y-visible">
       {showHeading && (
@@ -28,8 +28,11 @@ const TableCan = ({
             <tr>
               {headerTr.map((item, index) => (
                 <th
+                  Details
                   key={index}
-                  className={`p-4 ${item === "Action" ? "text-center" : "text-left"} capitalize`}
+                  className={`p-4 ${
+                    item === "Action" ? "text-center" : "text-left"
+                  } capitalize`}
                 >
                   {item}
                 </th>
@@ -37,14 +40,20 @@ const TableCan = ({
             </tr>
           </thead>
           <tbody>
-            {dataTr.length > 0 ? dataTr.map((data, index) => (
-              <TrName key={index} displayData={data} index={index} />
-            )) : (
+            {dataTr.length > 0 ? (
+              dataTr.map((data, index) => (
+                <TrName key={index} displayData={data} index={index} />
+              ))
+            ) : (
               <tr className="bg-green-950">
-                <td colSpan={`${headerTr.length}`} className="text-center py-2 px-4">No Data Found</td>
+                <td
+                  colSpan={`${headerTr.length}`}
+                  className="text-center py-2 px-4"
+                >
+                  No Data Found
+                </td>
               </tr>
-            )
-            }
+            )}
           </tbody>
         </table>
       </div>

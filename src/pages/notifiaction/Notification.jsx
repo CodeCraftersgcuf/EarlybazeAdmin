@@ -59,7 +59,7 @@ const Notification = () => {
     return (
         <>
             <div className='flex items-center justify-between mb-[100px]'>
-                <h1 className='text-4xl font-bold'>Notifications</h1>
+                <h1 className='text-4xl chivo-bold'>Notifications</h1>
                 <div className='flex items-center justify-end gap-4'>
                     <Link to={'Banners'}><button className='py-2 px-4 text-white bg-[#25AE7A] rounded-lg'>In-App Banner</button></Link>
                     <Link to={'inapp'}><button className='py-2 px-4 text-white bg-[#25AE7A] rounded-lg'>In-App Notification</button></Link>

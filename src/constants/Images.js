@@ -15,6 +15,7 @@ export { default as log_dash } from '../assets/images/log_dash.svg';
 export { default as support_dash } from '../assets/images/support_dash.svg';
 export { default as team_dash } from '../assets/images/team_dash.svg';
 export { default as setting_dash } from '../assets/images/setting_dash.svg';
+export { default as market } from '../assets/icons/market.svg';
 
 
 export { default as Admin } from '../assets/icons/Admin.png';
@@ -46,3 +47,4 @@ export { default as Vector } from '../assets/icons/Vector.png';
 export { default as Wallet } from '../assets/icons/Wallet.png';
 export { default as emailIcon } from '../assets/icons/email.png';
 export { default as call } from '../assets/icons/call.png';
+export { default as walet } from '../assets/icons/walet.png';

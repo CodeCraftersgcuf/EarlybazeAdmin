@@ -13,6 +13,8 @@ const TransactionModal = ({ status, statusName, options = [], accounts = [], onC
 
   const [selectedAccount, setSelectedAccount] = useState(false);
 
+  console.log('The Props Data:', status, statusName, options, accounts);
+
   const copyToClipboard = (value) => {
     navigator.clipboard.writeText(value);
     alert("Copied to clipboard: " + value);

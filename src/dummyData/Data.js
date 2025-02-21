@@ -13,6 +13,7 @@ import {
     support_dash,
     team_dash,
     setting_dash,
+    market
   } from "../constants/Images";
   
   export const Sidebar_links = [
@@ -126,6 +127,12 @@ import {
       name: "Settings",
       link: "/Settings/admin",
       icon: setting_dash,
+      sublinks: [],
+    },
+    {
+      name: "Marketing",
+      link: "/market",
+      icon: market,
       sublinks: [],
     },
   ];

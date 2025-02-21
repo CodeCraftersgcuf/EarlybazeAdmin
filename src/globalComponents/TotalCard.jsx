@@ -10,16 +10,16 @@ const TotalCard = ({ icon, iconBg, heading, subheading, cardValue, cardUnit, val
             <div className=''>
                 <div className='flex items-center gap-4'>
                     <div className={`${iconBg} w-14 h-14 rounded-full flex items-center justify-center`}>
-                        <img src={icon} alt="icon" className='w-10 h-10' />
+                        <img src={icon} alt="icon" className='w-8 h-8' />
                     </div>
                     <div className='flex flex-col justify-between h-full'>
                         <h1 className='text-sm opacity-65 font-bold capitalize'>{heading}</h1>
-                        <h1 className='text-xl font-bold capitalize'>{subheading}</h1>
+                        <h1 className=' font-bold capitalize'>{subheading}</h1>
                     </div>
                 </div>
                 <div className='mt-4'>
                     <div className={`flex ${cardValue ? 'items-end' : "items-center"} gap-2`}>
-                        <h1 className='text-4xl font-bold'>{cardValue}</h1>
+                        <h1 className='text-3xl font-bold'>{cardValue}</h1>
                         <div className='flex flex-col justify-between h-full'>
                             <h1 className='font-bold text-sm'>{cardUnit}</h1>
                             {

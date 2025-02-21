@@ -58,7 +58,7 @@ const PayoutRules = () => {
                     <div onClick={() => navigate(-1)} className='flex items-center justify-center cursor-pointer p-1 px-2 rounded-lg border border-[#25AE7A]'>
                         <i className="bi bi-chevron-left text-xl"></i>
                     </div>
-                    <h1 className='text-4xl font-bold'>Payout Rules</h1>
+                    <h1 className='text-4xl chivo-bold'>Payout Rules</h1>
                 </div>
             </div>
             <PayoutForm

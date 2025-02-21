@@ -42,7 +42,7 @@ const CryptoPortionRow = ({ displayData, index }) => {
             <td className="py-2 w-fit">
                 <div className='flex items-center justify-center gap-4 w-full'>
                     <Link to={`/wallet/virtual/${displayData.name}/details`} className="bg-[#25AE7A] px-4 rounded-xl py-2 text-white">View Wallet</Link>
-                    <Link to={`/user/management/customer/${displayData.name}/detail`} className="bg-[#084B82] px-4 rounded-xl py-2 text-white">User Account</Link>
+                    <Link to={`/user/management/customer/${displayData.id}/detail`} className="bg-[#084B82] px-4 rounded-xl py-2 text-white">User Account</Link>
                 </div>
             </td>
             <td className="px-4 py-2">
