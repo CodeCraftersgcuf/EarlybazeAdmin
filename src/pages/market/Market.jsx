@@ -1,12 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import AddingButton from "../../globalComponents/AddingButton";
 import MarketStats from "./components/MarketStats";
 import MarketTabs from "./components/MarketTabs";
-import MarketTable from "./components/MarketTable";
+import TableCan from "../../globalComponents/table/TableCan";
+import MarketRow from "./components/MarketRow"; // Row component
+import { useNavigate } from "react-router-dom"; // Corrected import
+
+// Sample data with statuses
+const tableData = [
+  {
+    title: "Join the best crypto app",
+    sent: 250,
+    openRate: "12% (120)",
+    conversionRate: "25% (134)",
+    bounceRate: "25% (134)",
+    progress: 75,
+    status: "Completed",
+  },
+  {
+    title: "Join the best crypto app",
+    sent: 250,
+    openRate: "12% (120)",
+    conversionRate: "28% (134)",
+    bounceRate: "25% (134)",
+    progress: 30,
+    status: "In progress",
+  },
+  {
+    title: "Join the best crypto app",
+    sent: 250,
+    openRate: "12% (120)",
+    conversionRate: "25% (134)",
+    bounceRate: "25% (134)",
+    progress: -15,
+    status: "In progress",
+  },
+  {
+    title: "Join the best crypto app",
+    sent: 250,
+    openRate: "12% (120)",
+    conversionRate: "26% (134)",
+    bounceRate: "25% (134)",
+    progress: 100,
+    status: "Completed",
+  },
+  {
+    title: "Join the best crypto app",
+    sent: 250,
+    openRate: "12% (120)",
+    conversionRate: "25% (134)",
+    bounceRate: "25% (134)",
+    progress: 78,
+    status: "All",
+  },
+];
+
+const tableHeaders = ["Title", "Sent", "Open Rate", "Conversion Rate", "Bounce Rate", "Progress", "More"];
 
 const Market = () => {
+  const navigate = useNavigate(); // Corrected usage of useNavigate
+  const [activeTab, setActiveTab] = useState("All"); // Track active tab
+
+  // Function to filter table data based on selected tab
+  const filteredData = tableData.filter((item) =>
+    activeTab === "All" ? true : item.status === activeTab
+  );
+
   const HandleButton = () => {
     console.log("Button clicked");
+    navigate("/market/create"); // Corrected navigation logic
   };
 
   return (
@@ -26,11 +88,20 @@ const Market = () => {
       {/* Stats Section */}
       <MarketStats />
 
-      {/* Tabs Section */}
-      <MarketTabs />
+      {/* Tabs Section - Pass setActiveTab to update state */}
+      <MarketTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Table Section */}
-      <MarketTable />
+      <div className="mt-6">
+        <TableCan
+          heading="Newsletter Campaigns"
+          ButtonName="View All"
+          ButtonLink="#"
+          headerTr={tableHeaders}
+          dataTr={filteredData} // Use filtered data
+          TrName={MarketRow} // Use MarketRow component
+        />
+      </div>
     </>
   );
 };

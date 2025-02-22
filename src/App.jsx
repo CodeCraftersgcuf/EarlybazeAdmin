@@ -39,6 +39,7 @@ import BankDetail from "./pages/userManagement_Subpages/account_detail/BankDetai
 import AccountNotification from "./pages/userManagement_Subpages/account_detail/AccountNotification";
 import AccountTransactions from "./pages/userManagement_Subpages/All_transactions/AccountTransactions";
 import Market from "./pages/market/Market";
+import MarketCreate from "./pages/market/MarketCreate";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import VirtualCard from "./pages/wallets/virtual_card/VirtualCard";
@@ -67,6 +68,7 @@ function App() {
                
               {/* market */}
               <Route path="market" element={<Market />} />
+              <Route path="market/create" element={<MarketCreate />} />
               {/* <Route path="teamChat" element={<NotFound />} /> */}
 
               <Route path="Transactions" element={<Transactions />} />
