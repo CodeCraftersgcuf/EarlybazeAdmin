@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import WalletCard from '../virtual_card/components/crypto_comp/WalletCard';
 import TableCan from '../../../globalComponents/table/TableCan';
 import EthRow from '../virtual_card/components/crypto_comp/EthRow';
+import ConfirmationPopup from '../../../globalComponents/ConfirmationPopup';
 
 const MasterCard_ETh = () => {
     const navigate = useNavigate();
+    const [isShowFreezeModel, setisShowFreezeModel] = useState(false)
     const tableHeader = [
         'action',
         'token',
@@ -67,7 +69,11 @@ const MasterCard_ETh = () => {
             "balanceUsd": "10,500"
         },
     ]
-    
+    const onComfirmFreeze = () =>{
+        alert("account freeze");
+        setisShowFreezeModel(false);
+    }
+
     return (
         <>
             <div className='flex items-center justify-between gap-8'>
@@ -85,7 +91,7 @@ const MasterCard_ETh = () => {
                         <h1 className='opacity-50 text-xl'>ETH</h1>
                         <h1 className='text-4xl'>12</h1>
                     </div>
-                    <div className='flex items-center gap-4 px-4 py-2 border rounded-lg'>
+                    <div className='flex items-center cursor-pointer gap-4 px-4 py-2 border rounded-lg' onClick={()=>setisShowFreezeModel(true)}>
                         <i className="bi bi-exclamation-octagon"></i>
                         Freeze Wallet
                     </div>
@@ -99,6 +105,7 @@ const MasterCard_ETh = () => {
                         <WalletCard
                             key={index}
                             wallet={item}
+                            isLastNotNeeded={true}
                         />
                     ))}
                 </div>
@@ -111,6 +118,15 @@ const MasterCard_ETh = () => {
                     TrName={EthRow}
                 />
             </div>
+            {
+                isShowFreezeModel && <ConfirmationPopup
+                    heading="Are you sure you want to freeze this wallet?"
+                    confirmColor='bg-red-500'
+                    closeText="Cancel"
+                    onConfirm={onComfirmFreeze}
+                    onClose={() => setisShowFreezeModel(false)}
+                />
+            }
         </>
     )
 }

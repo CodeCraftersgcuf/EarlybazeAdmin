@@ -68,7 +68,7 @@ const AccountTransactionsRow = ({ displayData = {}, index = 1 }) => {
                     </div>
                 </td>
                 <td className='px-4 py-2'>
-                    <div className={`w-1 h-10 rounded-lg mx-auto bg-${displayData.status == 'success' ? 'green-500' : 'red-600'}`}></div>
+                    <div className={`w-1 h-10 rounded-lg mx-auto bg-${displayData.status == 'successful' ? 'green-500' : displayData.status == 'pending' ? 'bg-yellow-500' : 'red-600'} bg-yellow-500`}></div>
                 </td>
                 {displayData.fees && (
                     <td className="px-4 py-2">

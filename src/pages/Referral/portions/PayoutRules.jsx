@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Dropdown from '../../../globalComponents/Dropdown';
@@ -8,9 +8,15 @@ import TableCan from '../../../globalComponents/table/TableCan';
 import PayoutRulesRow from '../components/PayoutRulesRow';
 import PayoutForm from '../components/PayoutForm';
 import { useNavigate } from 'react-router-dom';
+import ConfirmationPopup from '../../../globalComponents/ConfirmationPopup';
 
 const PayoutRules = () => {
     const navigate = useNavigate();
+    const [isShowFreezeModel, setisShowFreezeModel] = useState(false)
+    const onComfirmFreeze = () =>{
+        alert("account freeze");
+        setisShowFreezeModel(false);
+    }
     const signupOption = [
         { value: 'referral_code', name: 'referral code' },
     ];
@@ -73,8 +79,25 @@ const PayoutRules = () => {
             </div>
 
             <div className="mt-8">
-                <TableCan headerTr={table_th} dataTr={table_td} TrName={PayoutRulesRow} />
+                <TableCan
+                    headerTr={table_th}
+                    dataTr={table_td}
+                    TrName={PayoutRulesRow}
+                    TrPropsName={{
+                        OnEdit:()=>console.log('edit from parent component'),
+                        OnDelete:()=>setisShowFreezeModel(true)
+                    }}
+                />
             </div>
+            {
+                isShowFreezeModel && <ConfirmationPopup
+                    heading="Are you sure you want to delete this rule?"
+                    confirmColor='bg-red-500'
+                    closeText="Abort"
+                    onConfirm={onComfirmFreeze}
+                    onClose={() => setisShowFreezeModel(false)}
+                />
+            }
         </div>
     );
 };

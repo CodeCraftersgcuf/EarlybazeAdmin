@@ -21,7 +21,7 @@ const BuyTransactionsRow = ({ displayData = {}, index = 1 }) => {
         { label: "Fees in USD", value: "$12" },
         { label: "Date", value: "12 - 22 - 24 / 11:22 AM" },
     ];
-    const [justSubmited, setjustSubmited] = useState(false);
+    const [justSubmited, setjustSubmited] = useState(displayData.status == 'processing');
     const handleReasonSubmit = (value) =>{
         setreasonModel(false)
         console.log(value , displayData , displayData.receivedFrom)

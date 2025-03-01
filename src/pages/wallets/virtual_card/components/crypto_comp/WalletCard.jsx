@@ -3,7 +3,7 @@ import btcIcon from '../../../../../assets/icons/DummyIcon/btc.png'; // Ensure t
 import MoreDropdown from '../../../../../globalComponents/MoreDropdown';
 import AddressModel from '../../../master_card/component/AddressModel';
 
-const WalletCard = ({ wallet }) => {
+const WalletCard = ({ wallet,isLastNotNeeded }) => {
     const [ShowAddressModel, setShowAddressModel] = useState(false)
     const addressKey = [
         {
@@ -44,11 +44,11 @@ const WalletCard = ({ wallet }) => {
             <div className="cursor-pointer absolute top-5 right-5">
                 <MoreDropdown iconClass="bi bi-three-dots-vertical" menuClass="bg-theme-dark min-w-[150px]" buttonClass='w-8 h-8 border-green-950'>
                     <div className="bg-theme-light p-4 flex flex-col gap-4">
-                        <h1 className='text-lg capitalize'>Activities</h1>
-                        <h1 className='text-lg capitalize'>fund</h1>
-                        <h1 className='text-lg capitalize'>Freeze</h1>
-                        <h1 className='text-lg capitalize' onClick={()=>setShowAddressModel(true)}>View Address</h1>
-                        <h1 className='text-lg capitalize'>Set Token Status</h1>
+                        <h1 className='text-lg capitalize text-nowrap'>Activities</h1>
+                        <h1 className='text-lg capitalize text-nowrap'>fund</h1>
+                        <h1 className='text-lg capitalize text-nowrap'>Freeze</h1>
+                        <h1 className='text-lg capitalize text-nowrap' onClick={()=>setShowAddressModel(true)}>View Address</h1>
+                        {isLastNotNeeded ? "" : <h1 className='text-lg capitalize text-nowrap'>Set Token Status</h1>}
                     </div>
                 </MoreDropdown>
             </div>

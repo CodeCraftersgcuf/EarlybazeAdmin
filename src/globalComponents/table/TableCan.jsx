@@ -9,6 +9,7 @@ const TableCan = ({
   dataTr,
   TrName,
   showHeading = false,
+  TrPropsName = {}
 }) => {
   console.log(dataTr, " : tablecan datetr");
   return (
@@ -30,9 +31,8 @@ const TableCan = ({
                 <th
                   Details
                   key={index}
-                  className={`p-4 ${
-                    item === "Action" ? "text-center" : "text-left"
-                  } capitalize`}
+                  className={`p-4 ${item === "Action" ? "text-center" : "text-left"
+                    } capitalize`}
                 >
                   {item}
                 </th>
@@ -41,15 +41,24 @@ const TableCan = ({
           </thead>
           <tbody>
             {dataTr.length > 0 ? (
-              dataTr.map((data, index) => (
-                <TrName key={index} displayData={data} index={index} />
-              ))
+              dataTr.map((data, index) => {
+                // If TrName is a function component that returns JSX
+                if (typeof TrName === 'function') {
+                  // Check if it's being used with a wrapper function
+                  if (TrName.length > 1) {
+                    return <TrName key={index} displayData={data} index={index} {...TrPropsName} />;
+                  } else {
+                    const TrComponent = TrName;
+                    return <TrComponent key={index} displayData={data} index={index} {...TrPropsName} />;
+                  }
+                } else {
+                  // For class components or other React component types
+                  return <TrName key={index} displayData={data} index={index} {...TrPropsName} />;
+                }
+              })
             ) : (
-              <tr className="bg-green-950">
-                <td
-                  colSpan={`${headerTr.length}`}
-                  className="text-center py-2 px-4"
-                >
+              <tr>
+                <td colSpan={headerTr.length} className="text-center py-2 px-4">
                   No Data Found
                 </td>
               </tr>

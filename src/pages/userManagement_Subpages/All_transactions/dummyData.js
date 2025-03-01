@@ -243,12 +243,12 @@ export const table_body_rows = {
     buy: [
         {
             "asset": "BTC",
-            "network": "Bitcoin",
+            "network": "Bitcoins",
             "receivedFrom": "Account 1",
             "amount": "0.00234.34 BTC",
             "amountUSD": "$2,500",
             "amountPaid": "$2,500",
-            "status": "successful",
+            "status": "pending",
             "date": "12 - 22 - 24",
             "time": "11:23 AM",
             "typeimg": "btc.png"
