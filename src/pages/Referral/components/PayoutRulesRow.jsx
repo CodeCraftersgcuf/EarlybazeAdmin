@@ -1,7 +1,7 @@
 import React from 'react';
 import MoreDropdown from '../../../globalComponents/MoreDropdown';
 
-const PayoutRulesRow = ({ displayData, index }) => {
+const PayoutRulesRow = ({ displayData, index,OnEdit,OnDelete }) => {
     return (
         <tr className={`hover:bg-green-800 hover:cursor-pointer ${index % 2 === 0 ? "bg-green-950" : ""}`}>
             <td className='px-4 py-2 text-nowrap'>{displayData.user}</td>
@@ -15,9 +15,10 @@ const PayoutRulesRow = ({ displayData, index }) => {
             <td className='px-4 py-2'>
                 <div className='flex items-center gap-4'>
                     <button className="bg-[#25AE7A] text-white px-4 py-2 rounded-lg">Exemptions</button>
-                    <MoreDropdown>
-                        <div className=''>
-                                working
+                    <MoreDropdown menuClass='min-w-[150px] bg-theme-dark p-2'>
+                        <div className='flex flex-col gap-2'>
+                            <button onClick={OnEdit}  className='cursor-pointer text-white py-2 px-4 text-left hover:bg-green-950 rounded-lg'>Edit</button>
+                            <button onClick={OnDelete}  className='cursor-pointer text-white py-2 px-4 text-left hover:bg-green-950 rounded-lg'>Delete</button>
                         </div>
                     </MoreDropdown>
                 </div>

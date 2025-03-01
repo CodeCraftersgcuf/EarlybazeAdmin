@@ -9,11 +9,18 @@ import WalletCard from './components/crypto_comp/WalletCard';
 import AddWalletModal from './components/crypto_comp/addwallet/AddWalletModal';
 import TableCan from '../../../globalComponents/table/TableCan';
 import EthRow from './components/crypto_comp/EthRow';
+import ConfirmationPopup from '../../../globalComponents/ConfirmationPopup';
 
 const ViewWallet_ETH = () => {
     const navigate = useNavigate();
     const { username } = useParams();
     const [showAddWallet, setshowAddWallet] = useState(false)
+    const [isShowFreezeModel, setisShowFreezeModel] = useState(false)
+
+    const onComfirmFreeze = () =>{
+        alert("account freeze");
+        setisShowFreezeModel(false);
+    }
     const tableHeader = [
         'action',
         'token',
@@ -26,39 +33,39 @@ const ViewWallet_ETH = () => {
     const tableBody = [
         {
             action: 'swap',
-            asset:'BTC',
+            asset: 'BTC',
             network: 'biticon',
-            amount:'$2000',
-            date : '30-1-2025',
+            amount: '$2000',
+            date: '30-1-2025',
             time: '2:25 PM',
-            status : true
+            status: true
         },
         {
             action: 'send',
-            asset:'BTC',
+            asset: 'BTC',
             network: 'biticon',
-            amount:'$2000',
-            date : '30-1-2025',
+            amount: '$2000',
+            date: '30-1-2025',
             time: '2:25 PM',
-            status : true
+            status: true
         },
         {
             action: 'receive',
-            asset:'BTC',
+            asset: 'BTC',
             network: 'biticon',
-            amount:'$2000',
-            date : '30-1-2025',
+            amount: '$2000',
+            date: '30-1-2025',
             time: '2:25 PM',
-            status : true
+            status: true
         },
         {
             action: 'buy',
-            asset:'BTC',
+            asset: 'BTC',
             network: 'biticon',
-            amount:'$2000',
-            date : '30-1-2025',
+            amount: '$2000',
+            date: '30-1-2025',
             time: '2:25 PM',
-            status : true
+            status: true
         },
     ]
     const tabs = [
@@ -136,7 +143,7 @@ const ViewWallet_ETH = () => {
                         <h1 className='opacity-50 text-xl'>ETH</h1>
                         <h1 className='text-4xl'>12</h1>
                     </div>
-                    <div className='flex items-center gap-4 px-4 py-2 border rounded-lg'>
+                    <div className='flex items-center gap-4 px-4 py-2 border rounded-lg cursor-pointer' onClick={()=>setisShowFreezeModel(true)}>
                         <i className="bi bi-exclamation-octagon"></i>
                         Freeze Wallet
                     </div>
@@ -148,7 +155,9 @@ const ViewWallet_ETH = () => {
                 <div className='grid grid-cols-4 gap-8 mt-4'>
                     {wallet.map((item, index) => (
                         <WalletCard
+                            key={index}
                             wallet={item}
+                            isLastNotNeeded={true}
                         />
                     ))}
                 </div>
@@ -161,6 +170,15 @@ const ViewWallet_ETH = () => {
                     TrName={EthRow}
                 />
             </div>
+            {
+                isShowFreezeModel && <ConfirmationPopup
+                    heading="Are you sure you want to freeze this wallet?"
+                    confirmColor='bg-red-500'
+                    closeText="Cancel"
+                    onConfirm={onComfirmFreeze}
+                    onClose={() => setisShowFreezeModel(false)}
+                />
+            }
         </>
     )
 }
